@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Page</title>
+    <link rel="stylesheet" href="stylec.css">
+    <link rel="icon" type="image/png" href="dumbell.png">
+</head>
+<body onload="checkLogin()">
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">FitTrack</div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="account.html" class="active">Accounts</a></li>
+            <li><a href="approval.html">Approval</a></li>
+            <li><a href="attendance.html">Attendance Log</a></li>
+        </ul>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </nav>
+
+    <!-- Header with Search -->
+    <header>
+        <h1>Account Details</h1>
+        <input type="text" id="searchBar" placeholder="Search..." onkeyup="searchAccounts()">
+    </header>
+
+    <!-- Account Information -->
+    <div class="account-container">
+        <div class="account-card">
+            <div class="summary">
+                <p><strong>Name:</strong> Mohammad Azeem Abdu</p>
+                <button class="view-more-btn" onclick="toggleDetails(this)">View More</button>
+            </div>
+            <div class="details hidden">
+                <div class="column">
+                    <p><span>Date of Birth:</span> 02-05-2003</p>
+                    <p><span>Address:</span> Baliwasan Grande</p>
+                    <p><span>Email:</span> azeee#gmail.com</p>
+                    <p><span>Mobile No.:</span> 09123456789</p>
+                </div>
+                <div class="column">
+                    <p><span>Gender:</span> Male</p>
+                    <p><span>Weight:</span> 49kg</p>
+                    <p><span>Height:</span> 107cm</p>
+                    <p><span>BMI:</span> 17.5</p>
+                </div>
+                <div class="column">
+                    <p><span>Membership Type:</span> Annual</p>
+                    <h3 class="emergency-title">Emergency Contact</h3>
+                    <p><span>Name:</span> Jean Keating</p>
+                    <p><span>Mobile No.:</span> 09123456789</p>
+                    <p><span>Relationship:</span> Sister</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="accountscript.js"></script>
+
+</body>
+</html>

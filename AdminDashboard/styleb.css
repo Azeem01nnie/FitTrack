@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #b22222;
+    color: white;
+    padding: 15px;
+}
+
+nav {
+    background: #b22222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    color: white;
+}
+
+nav .logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+nav ul li a.active, nav ul li a.hover {
+    background: white;
+    color: #b22222;
+}
+
+.logout-btn {
+    background: white;
+    color: #b22222;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    background: #b22222;
+    color: white;
+    cursor: pointer;
+}
+
+button.active {
+    background: darkred;
+}
+
+#logout {
+    text-align: right;
+}
+
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+}
+
+th , td {
+    padding: 10px;
+    border: 1px solid gray;
+}
+
+th {
+    background: #b22222;
+    color:  white;
+}
+
+input {
+    padding: 8px;
+    margin: 10px;
+    width: 50%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Log</title>
+    <link rel="stylesheet" href="styleb.css">
+    <link rel="icon" type="image/png" href="dumbell.png">
+</head>
+<body>
+    <nav>
+        <div class="logo">FitTrack</div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="account.html">Accounts</a></li>
+            <li><a href="approval.html">Approval</a></li>
+            <li><a href="attendance.html"class="active">Attendance Log</a></li>
+        </ul>
+        <button class="logout-btn" onclick="window.location.href='AdminLogin'">Logout</button>
+    </nav>
+    <header>
+        <h1>Attendance Log</h1>
+        <input type="text" id="searchBar" placeholder="Search..." onkeyup="searchAccounts()">
+    </header>
+    <section id="attendance">
+        <table id="attendancetable">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Time in</th>
+                <th>Time out</th>
+                <th>Status</th>
+            </tr>
+        </table>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
