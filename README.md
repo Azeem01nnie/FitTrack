@@ -8,7 +8,9 @@ Members:
 
 Mohammad Azeem S Abdu , Marian Claire V Talaid , Shadia G Lagoyo, Mcneelson Tan
 
-The Gym Management System is designed to streamline and automate essential operations within a gym. This system will enhance efficiency by tracking attendance,managing walk-in transactions, handling membership bookings.
+About FitTrack
+
+FitTrack is a Gym Management System that is designed to streamline and automate essential operations within a gym. This system will enhance efficiency by tracking attendance,managing walk-in transactions, handling membership bookings.
 
 Purpose
 
