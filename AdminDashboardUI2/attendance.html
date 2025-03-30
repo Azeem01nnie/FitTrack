@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitTrack - Attendance Log</title>
+    <link rel="stylesheet" href="styless.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2 class="logo">FitTrack</h2>
+        <ul>
+            <li><a href="homepagee.html">Home</a></li>
+            <li><a href="approval.html">Approval</a></li>
+            <li><a href="#" class="active">Attendance Log</a></li>
+            <li><a href="#">Manage Account</a></li>
+            <li><a href="#" class="logout">Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="topbar">
+            <label for="search">Search</label>
+            <input type="text" id="search" placeholder="Search...">
+        </div>
+
+        <div class="attendance-log">
+            <div class="sort-section">
+                <label>Sort by:</label>
+                <select id="sort-options" class="sort-btn">
+                    <option value="a-z">A - Z</option>
+                    <option value="z-a">Z - A</option>
+                    <option value="recent">Most Recent</option>
+                    <option value="oldest">Oldest</option>
+                </select>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Name</th>
+                        <th>Time In</th>
+                        <th>Time Out</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>azee00001</td>
+                        <td>Azeem Abdu</td>
+                        <td>11-11-11 09:11</td>
+                        <td>11-11-11 09:11</td>
+                    </tr>
+                    <tr>
+                        <td>azee00002</td>
+                        <td>John Doe</td>
+                        <td>11-11-11 10:00</td>
+                        <td>11-11-11 18:00</td>
+                    </tr>
+                    <tr>
+                        <td>azee00003</td>
+                        <td>Jane Smith</td>
+                        <td>11-11-11 07:30</td>
+                        <td>11-11-11 16:30</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="zeescript.js"></script>
+</body>
+</html>
