@@ -65,3 +65,9 @@ document.querySelector('.dashboard tbody').addEventListener('click', function(ev
         row.remove();
     }
 });
+
+// JavaScript to handle the sidebar toggle
+document.querySelector('.sidebar').addEventListener('click', function() {
+    this.classList.toggle('expanded'); // Toggle the expanded class to open and close the sidebar
+});
+

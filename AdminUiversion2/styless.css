@@ -76,25 +76,10 @@ body {
 
 .topbar input {
     padding: 8px;
-    width: 200px;
     border: 1px solid #ccc;
     border-radius: 5px;
-}
-
-.admin-profile {
-    display: flex;
-    align-items: center;
-}
-
-.admin-profile p {
-    margin-right: 10px;
-}
-
-.profile-pic {
-    width: 40px;
-    height: 40px;
-    background: gray;
-    border-radius: 50%;
+    width: 80vh;
+    margin-left: 10px;
 }
 
 .attendance-log {
@@ -113,7 +98,7 @@ body {
 
 .sort-btn {
     padding: 8px;
-    width: 150px;
+    width: 90px;
     background: white;
     color: black;
     border: 1px solid #ccc;
@@ -130,14 +115,14 @@ table {
     overflow: hidden;
 }
 
+table th {
+    color: black;
+}
+
 table th, table td {
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid #ccc;
-}
-
-table th {
-    background: #ddd;
 }
 
 .table-container h3{
@@ -150,7 +135,7 @@ table th {
     background: #2ecc71;
     color: white;
     border: none;
-    padding: 8px 15px;
+    padding: 8px 10px;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -231,23 +216,25 @@ button:hover {
 
 .dashboard th {
     background-color: white;
-    color: #3b82f6;
+    color: black;
     font-weight: bold;
 }
 
+.table-container h3 {
+    background: white;
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
 
-@media (max-width: 768px) {
-    .topbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+.namedash {
+    color: white;
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
 
-    .sort-btn {
-        width: 100%;
-    }
 
-    table th, table td {
-        padding: 8px;
-        font-size: 14px;
-    }
+@media (max-width: 400px) {
+    
 }
