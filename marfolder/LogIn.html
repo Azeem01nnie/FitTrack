@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="welcome-section">
+            <h1>Welcome To <span>FitTrack!</span></h1>
+            <p id="click">New Here?</p>
+        </div>
+        <div class="login-section">
+            <h2>Log In</h2>
+            <form>
+                <input type="text" placeholder="Username" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Log In</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById('click').addEventListener('click', function(){
+            window.location.href='Registration.html';
+        })
+    </script>
+</body>
+</html>
