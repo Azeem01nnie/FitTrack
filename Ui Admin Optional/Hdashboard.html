@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="app.js" defer></script>
+</head>
+<body>
+    <nav>
+        <div class="hamburger" onclick="toggleSidebar()">&#9776</div>
+        <div class="topbar">
+            <label for="search">FitTrack</label>
+            <input type="text" id="search" placeholder="Search...">
+        </div>
+    </nav>
+    <aside class="side-nav" id="sidebar">
+        <ul>
+            <li><a href="Hdashboard.html" class="active">Home dashboard</a></li>
+            <li><a href="Approvalpage.html">Approval log</a></li>
+            <li><a href="Attendancepage.html">Attendance log</a></li>
+            <li><a href="managepage.html">Manage account</a></li>
+        </ul>
+        <ul>
+            <li><a href="//"></a>Logout</li>
+        </ul>
+    </aside>
+    <main class="main-content">
+        <h3>Home</h3>
+        <h4>Welcome back admin!</h4>
+        <div class="sort-section">
+        </div>
+        <div class="dashboardbox">
+            <div class="box">
+                <h1>1</h1>
+                <p>Account Time in</p>
+            </div>
+            <div class="box">
+                <h1>1</h1>
+                <p>Account Time out</p>
+            </div>
+            <div class="box">
+                <h1>1</h1>
+                <p>Total User</p>
+            </div>
+        </div>
+        </div>
+        <h3>Recent Log</h3>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>Name</th>
+                        <th>Time In</th>
+                        <th>Time Out</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>001</td>
+                        <td>John Doe</td>
+                        <td>08:00 AM</td>
+                        <td>10:00 AM</td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>Jane Smith</td>
+                        <td>09:30 AM</td>
+                        <td>11:45 AM</td>
+                    </tr>
+                    <tr>
+                        <td>003</td>
+                        <td>Michael Lee</td>
+                        <td>07:45 AM</td>
+                        <td>09:30 AM</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer>FitTrack by zee.</footer>
+</body>
+</html>
