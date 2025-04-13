@@ -1,0 +1,98 @@
+body {
+    font-family: "Outfit";
+}
+
+table {
+    margin: 50px auto;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: maroon;
+    color: white;
+}
+
+.logo{
+    
+        height: 100px; 
+        width: auto; 
+        margin: 20px 0; 
+    
+}
+.header-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+
+.header {
+    display:flex;
+ justify-content: space-between;
+    align-items: center;
+    background-color:#8E1616;
+    padding: 20px 20px;
+    height: 50px;
+    margin-bottom: 80px; 
+}
+
+.Register, .Logout {
+    background: black;
+    display: flexbox;
+    gap: 10px;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    transition: background 0.3s;
+}
+
+
+.Register:hover, .Logout:hover{
+    background: #444;
+
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    color: black;
+
+}
+
+thead {
+    background-color: #8E1616;
+    color: white;
+    font-weight: bold;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+td:last-child {
+    text-align: center;
+}
+.update {
+    background: black;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px; 
+    font-size: 14px;
+    display: inline-block;
+}
+
+.update:hover {
+    background: #444;
+}

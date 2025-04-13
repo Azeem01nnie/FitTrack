@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions</title>
+    <link rel="stylesheet" href="styles4.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>FitTrack</h2>
+        <p class="step">Personal Information</p>
+        <p class="step">Type of Membership</p>
+        <p class="step-active">Terms and Conditions</p>
+    </div>
+    <div class="container">
+        <h2 class="heading-2">Terms and Conditions</h2>
+        <div class="terms-box">
+        <p><strong>Membership Eligibilty</strong> <br>
+            Membership is available to individuals who meet the gym's minimum age requirement and are in suitable health for physical activity.
+            The gym may require proof of age, identification, or medical clearance if necessary. By signing up, members confirm that they have no medical conditions that may be aggravated 
+            by exercise or gym activities.
+        </p>
+        <p><strong>Membership Fees and Validity</strong> <br>
+            Membership fees must be paid according to the agreed schedule, whether monthly, daily or annually.
+            All payments are non-refundable, even in cases of non-usage or voluntary cancellation. Failure to pay membership fees on time may result in restricted access to the gym until payment is settled.
+            The gym reserves the right to adjust membership fees with prior notice.
+        </p>
+        <p><strong>Access and Usage</strong> <br>
+            Members must check in upon entry using the designated system, such as a membership number.
+            Membership access is strictly personal and cannot be shared or transferred to another individual.
+            Unauthorized access or allowing non-members to use membership privileges may result in immediate termination. Members
+            are expected to follow all gym rules, including proper use of equipment, time limits on machine, and hygiene protocols
+        </p>
+        <p><strong>Code of Conduct</strong> <br>
+            All members must respect staff, fellow gym-goers, and the facility. Any form of harassment, discrimination, aggressive behavior, or damage to gym property will not be tolerated and may lead to suspension or termination of membership.
+            Proper gym attire must be worn at all times, and members must clean equipment after use.
+        </p>
+        <p><strong>Liability and Waiver</strong> <br>
+            Members acknowledge that participation in gym activities involves inherent risks. The gym is not responsible for any injuries, accidents, or lost personal belongings. Members are encouraged to seek medical clearance before engaging in any physical activity.
+        </p>
+        <p><strong>Membership Termination</strong> <br>
+            The gym reserves the right to suspend or terminate memberships for any violation of these terms, non-payment, or misconduct. Members may cancel their membership at any time, but no refunds will be issued. In cases of temporary closure due to maintenance or emergencies, 
+            memberships may be extended accordingly at the gym’s discretion.
+        </p>
+        <p><strong>Amendments of Terms</strong> <br> 
+            These terms and conditions may be updated at any time. The gym will notify members of any changes through email, notices, or announcements within the facility.
+            Continued use of the gym after updates signifies acceptance of the revised terms.
+        </p>
+        </div>
+        <div class="agree-box">
+        <input type="checkbox" id="agreeCheckbox"> I confirm that I have read and accept the terms and conditions
+        </div> 
+        <div class="button-container">
+            <button id="backButton">Back</button>
+            <button id="nextButton" disabled>Proceed</button>
+        </div>
+    </div>
+    <script>
+        document.getElementById('agreeCheckbox').addEventListener('change', function() {
+            document.getElementById('nextButton').disabled = !this.checked;
+        });
+    </script>
+</body>
+</html>

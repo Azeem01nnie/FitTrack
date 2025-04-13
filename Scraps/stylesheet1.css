@@ -1,0 +1,148 @@
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    background: rgb(255, 255, 255);
+    font-family: "Outfit";
+    padding: 40px;
+}
+
+.container {
+    max-width: 1400px;
+    width: 90%;
+    max-height: 1400px;
+    background: rgba(238, 238, 238, 0.93);
+    padding: 40px;
+    margin: auto;
+}
+
+img {
+    width: 200px;
+    height: 120px;
+}
+
+.note_proc, 
+.receipt_no, 
+.name, 
+.date, 
+.member_num, 
+.address {
+    font-size: 24px;
+    font-family: "Outfit";
+    font-weight: 400;
+    color: rgba(0, 0, 0, 1);
+    height: 36px;
+}
+
+.note_proc {
+    font-weight: 600;
+    width: 639px;
+}
+
+.receipt_no, .date {
+    text-align: right;
+    width: 173px;
+}
+
+.member_num {
+    width: 245px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.name, .address {
+    width: 173px;
+}
+
+/* Status Text */
+.status-text {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.pending {
+    color: red;
+    font-size: 24px;
+    font-weight: 400;
+    width: 173px;
+    text-align: right;
+    display: inline-block;
+}
+
+.success {
+    color: green;
+    display: none ;
+}
+
+.success i {
+    margin-left: 15px;
+    color: green;
+}
+
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: center;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 2px solid #fff;
+    text-align: center;
+}
+
+th {
+    background-color: #8E1616;
+    color: white;
+    font-weight: bold;
+    padding: 15px 20px;
+}
+
+td {
+    background-color: #8E1616;
+    color: white;
+    padding: 40px 60px;
+}
+
+
+tr:nth-child(2) td {
+    padding: 100px 60px;
+}
+
+
+.number, .date_of_tr, .amount {
+    font-size: 20px;
+    font-family: "Outfit";
+    font-weight: 700;
+    color: white;
+    height: 25px;
+}
+
+.number {
+    width: 75px;
+}
+
+.date_of_tr {
+    width: 183px;
+}
+
+.amount {
+    width: 74px;
+}

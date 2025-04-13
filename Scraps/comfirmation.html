@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Frame</title>
+    <link rel="stylesheet" href="stylesheet1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   
+</head>
+<body>
+    <div class="container">
+        <img src="Group 40.png" alt="logo">
+        <p class="note"><strong>Note: Proceed to the reception desk to complete payment</strong></p>
+        <p class="status-text">
+            <span class="pending">Pending <i class="fa fa-spinner fa-spin"></i></span>
+            <span class="success">Success <i class="fa fa-check-circle"></i></span>
+        </p>
+
+        <div class="row">
+            <div class="left">Receipt No.:</div>
+        </div>
+        <div class="row">
+            <div class="left">Name:</div>
+        </div>
+        <div class="row">
+            <div class="left">Address:</div>
+        </div>
+        <div class="row">
+            <div class="left">Date:</div>
+        </div>
+        <div class="row">
+            <div class="right">Member Number:</div>
+        </div>
+
+        <table border="2">
+            <tr>
+                <th>Number</th>
+                <th>Date of Transaction</th>
+                <th>Amount</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+            let pending = document.querySelector('.pending');
+            let success = document.querySelector('.success');
+        
+            // Initially hide success
+            if (success) {
+                success.style.display = 'none';
+            }
+        
+            // After 3 seconds, hide pending and show success
+            setTimeout(function () {
+                if (pending && success) {
+                    pending.style.display = 'none';
+                    success.style.display = 'inline-block';
+                }
+            }, 3000);
+        });
+        </script>
+        
+   
+    <body>
+    <html>
