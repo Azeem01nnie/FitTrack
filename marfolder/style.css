@@ -1,90 +1,159 @@
-body, html {
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100vh;
-    font-family: "Outfit-Black", Helvetica;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('registration.png') no-repeat center center/cover;
-}
-
-.container {
+    height: 100vh;
+    background-color: #eee6de;
+    background: url('gyming.jpg') center/cover no-repeat;
+  }
+  
+  .container {
     display: flex;
-    justify-content: space-between;
     width: 900px;
-    height: 500px;
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 15px;
+    background: #fff;
+    border-radius: 20px;
     overflow: hidden;
-}
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+  
+  .illustration {
+    flex: 1;
+    min-height: 500px;
+  }
 
-.welcome-section, .login-section {
-    width: 50%;
+  .illustration video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  
+  .login-section {
+    flex: 1;
     padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: white;
-}
-
-.welcome-section h1 {
-    font-size: 3rem;
+  }
+  
+  .logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: #5ab9ea;
     margin-bottom: 10px;
-    font-weight: 1000;
-    font-family: "Outfit-Black", Helvetica;
-}
-
-.welcome-section h1 span {
-    color: #4A90E2;
-}
-
-.welcome-section p {
-    margin-top: 5px;
-    font-size: 1.2rem;
-    text-align: center;
-}
-
-.login-section h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+  }
+  
+  .title {
+    font-size: 20px;
     font-weight: 700;
-    text-align: center;
-}
-
-.login-section form {
+    margin-bottom: 5px;
+  }
+  
+  .subtitle {
+    color: #888;
+    margin-bottom: 30px;
+  }
+  
+  .socials {
     display: flex;
-    flex-direction: column;
-}
-
-.login-section input {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: solid;
-    border-color: #357ABD;
-    border-radius: 5px;
-    outline: none;
-    background-color: rgba(0, 0, 0, 0.6);;
-    color: white;
-    width: 250px;
-    margin-left: 50px;
-    
-}
-
-.login-section button {
-    padding: 7px;
-    background-color: #4A90E2;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .socials button {
+    flex: 1;
+    padding: 10px 0;
     border: none;
-    border-radius: 40px;
-    color: white;
+    border-radius: 10px;
+    background-color: #f2f2f2;
     cursor: pointer;
-    transition: background-color 0.3s;
-    width: 100px;
-    margin-left: 140px;
-}
-
-.login-section button:hover {
-    background-color: #357ABD;
-}
+    font-size: 18px;
+  }
+  
+  .or {
+    text-align: center;
+    color: #aaa;
+    margin: 20px 0;
+    position: relative;
+  }
+  
+  .or::before, .or::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background: #ccc;
+  }
+  
+  .or::before {
+    left: 0;
+  }
+  
+  .or::after {
+    right: 0;
+  }
+  
+  input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .remember {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .remember input {
+    margin-right: 5px;
+  }
+  
+  .login-button {
+    background-color: #5ab9ea;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .signup {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .signup a {
+    color: #5ab9ea;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .terms {
+    font-size: 12px;
+    color: #999;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .terms a {
+    color: #999;
+    text-decoration: underline;
+  }
+  
