@@ -81,7 +81,7 @@
   
   .or {
     text-align: center;
-    color: #aaa;
+    color: #999;
     margin: 20px 0;
     position: relative;
   }
@@ -92,7 +92,7 @@
     top: 50%;
     width: 40%;
     height: 1px;
-    background: #ccc;
+    background: #999;
   }
   
   .or::before {
@@ -157,4 +157,90 @@
     color: #999;
     text-decoration: underline;
   }
+
+@media (max-width: 400px){
+    .illustration {
+      display: none;
+    }
+  
+    .container {
+      display: flex;
+      width: 350px;
+      height: 360px;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+  
+    .login-section {
+      width: 100%;
+      padding: 15px;
+    }
+
+    .logo {
+      margin-top: 25px;
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .title {
+      display: none;
+    }
+
+    .subtitle {
+      display: none;
+    }
+
+    input {
+      width: 80%;
+      padding: 12px;
+      margin: 7px auto;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 10px
+    }
+
+    .login-button {
+      padding: 12px;
+      width: 80%;
+      font-size: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 7px auto;
+    }
+
+    .or {
+      text-align: center;
+      color: #999;
+      margin: 20px 0;
+      position: relative;
+    }
+    
+    .or::before, .or::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 40%;
+      height: 1px;
+      background: #999;
+    }
+
+    .signup {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .signup a {
+      color: #5ab9ea;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .terms {
+      display: none;
+    }
+}
   

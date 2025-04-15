@@ -2,11 +2,13 @@
 
 Topic:
 
-Gym Management System 
+Gym Management System (FITTRACK)
 
 Members:
 
-Mohammad Azeem S Abdu , Marian Claire V Talaid , Shadia G Lagoyo, Mcneelson Tan
+Mohammad Azeem S Abdu
+Marian Claire V Talaid
+Shadia G Lagoyo
 
 About FitTrack
 
