@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/FitTrack/icons/FittrackFavIcon.png">
     <title>Registration Form</title>
     <link rel="stylesheet" href="styles2.css">
 </head>
@@ -17,11 +18,15 @@
         <form class="form-1">
             <div class="form-group">
                 <label>Last Name</label>
-                <input type="text" size="50" maxlength="50" placeholder="Last Name"/>
+                <input type="text" size="35" maxlength="50"/>
             </div>
             <div class="form-group">
                 <label>First Name</label>
-                <input type="text" size="50" maxlength="50" placeholder="First Name"/>
+                <input type="text" size="35" maxlength="50"/>
+            </div>
+            <div class="form-group">
+                <label>Middle Initial</label>
+                <input type="text" size="15" maxlength="2"/>
             </div>
         </form>
         <br>
@@ -44,7 +49,7 @@
         <form class="form-3">
             <div class="form-group">
                 <label>Email</label>
-                <input type="email" size="45" placeholder="Email">
+                <input type="email" size="45">
             </div>
             <div class="form-group">
                 <label>Mobile No.</label>
@@ -77,11 +82,11 @@
             <form class="form-5">
             <div class="form-group">
                 <label>Last Name</label>
-                <input type="text" size="50" maxlength="50" placeholder="Last Name">
+                <input type="text" size="50" maxlength="50">
             </div>
             <div class="form-group">
                 <label>First Name</label>
-                <input type="text" size="50" maxlength="50" placeholder="First Name">
+                <input type="text" size="50" maxlength="50">
             </div>
             </form>
             <form class="form-6">
@@ -91,12 +96,17 @@
             </div>
             <div class="form-group">
                 <label> Relationship</label>
-                <input type="text" size="50" maxlength="50" placeholder="Relationship">
+                <input type="text" size="50" maxlength="50">
             </div>
             </form>
             <br> <br>
             <div class="buttons">
-                <button class="next-btn">Next</button>
+                <button class="next-btn" id="nextButton">Next</button>
             </div>
+            <script>
+                document.getElementById('nextButton').addEventListener('click', function(){
+                    window.location.href='Type_of_Membership.html';
+                })
+            </script>
 </body>
 </html>
