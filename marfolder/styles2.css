@@ -1,100 +1,149 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
     font-family: Arial, sans-serif;
-}
-body {
+  }
+  
+  .container {
     display: flex;
-    height: 100vh;
-    background-color: #333;
-}
-.sidebar {
-    width: 25%;
-    background-color: #5ab9ea;
+    min-height: 100vh;
+  }
+  
+  .title-sidebar {
+    width: 250px;
+    background-color: #33b5e5;
     color: white;
+    padding: 20px;
+    flex-shrink: 0;
+  }
+  
+  .title-sidebar h2 {
+    margin-top: 0;
+    font-size: 40px;
+  }
+  
+  .sidebar p {
+    margin-top: 120px;
+    margin-bottom: 100px;
+    font-size: 1rem;
+
+  }
+  
+  .step-active {
+    font-weight: bolder;
+  }
+  
+  .form-container {
+    flex: 1;
     padding: 30px;
+    background-color: #fff;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-}
-.sidebar h2 {
-    font-size: 65px;
-    margin-bottom: 30px;
-    font-family: "Outfit-Black", Helvetica;
-    font-weight: 900;
-}
-.sidebar .step {
-    margin: 50px ;
-    opacity: 0.6;
-}
-.sidebar .step-active {
-    opacity: 1;
-    margin: 50px;
-}
-.form-container {
-    width: 75%;
-    background: white;
-    padding-top: 45px;
-    padding-bottom: 10px;
-    padding-left: 100px;
-    color: black;
-}
-.form-group {
+    flex: 1;
+  }
+  
+  .form-group-row {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="tel"],
+  .form-group input[type="number"],
+  .form-group input[type="date"] {
+    padding: 8px;
+    font-size: 10px;
+    border: 1px solid #888;
+    border-radius: 4px;
+    width: 100%;
+    border: 1px solid #ccc;
+  }
+
+  label{
+    font-size: 10px;
+    margin-bottom: 7px;
+  }
+  
+  .gender-options {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-    margin-bottom: 0px;
-}
-
-.form-1 {
+    gap: 10px;
+    margin-top: 5px;
+  }
+  
+  .gender-options label {
     display: flex;
-    flex-direction: row;
-}
-.form-2 {
-    display: flex;
-    flex-direction: row;
-}
-.form-3 {
-    display: flex;
-    flex-direction: row;
-}
-.form-4 {
-    display: flex;
-    flex-direction: row;
-}
-.form-5 {
-    display: flex;
-    flex-direction: row;
-}
-.form-6 {
-    display: flex;
-    flex-direction: row;
-}
-.form-group label {
-    width: 100%;
-    font-weight: 500;
-    float: left;
-}
-
-.form-group input {
-    flex: 0;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid;
-    border-color: #5680e9;
-    background: #fffefe;
-    color: black;
-}
-
-.buttons button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.next-btn {
-    background: #8860d0;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .buttons {
+    text-align: right;
+    margin-top: 20px;
+  }
+  
+  .next-btn {
+    background-color: #33b5e5;
     color: white;
-}
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  /* Responsive styles for screens <= 400px */
+  @media (max-width: 400px) {
+    .container {
+      flex-direction: column;
+    }
+  
+    .title-sidebar {
+      width: 100%;
+    }
+
+    .title-sidebar h2 {
+        margin-top: 0;
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+    .sidebar{
+        display: flex;
+    }
+
+    .sidebar p {
+        display: flex;
+        font-size: 10px;
+        margin: 10px auto;
+    }
+
+    .transformer{
+        font-size: 10px;
+    }
+  
+    .form-group-row {
+      flex-direction: column;
+    }
+  
+    .form-container {
+      padding: 15px;
+    }
+  
+    .next-btn {
+      width: 40%;
+      padding: 12px;
+      font-size: 13px;
+      border-radius: 5px;
+    }
+  }
+  
