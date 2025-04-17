@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background: #fff;
+    color: #333;
+    padding: 2rem;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    color: #5ab9ea;
+    font-weight: bolder;
+    font-size: 35px;
+  }
+  
+  .signout {
+    border: none;
+    background: none;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .step {
+    margin-top: 2rem;
+    color: #777;
+    font-weight: bold;
+  }
+  
+  h2 {
+    margin: 0.5rem 0 2rem;
+  }
+  
+  .plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+  
+  .plan-card {
+    border: 2px solid transparent;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    border: 1px solid #5ab9ea;
+  }
+  
+  .plan-card input[type="radio"] {
+    display: none;
+  }
+  
+  .plan-card .plan-content {
+    padding: 1rem;
+  }
+  
+  .plan-card .price {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+  }
+  
+  .plan-card .resolution {
+    font-size: 0.9rem;
+    color: #ddd;
+  }
+  
+  .plan-card ul {
+    list-style-type:circle;
+    font-size: 10px;
+    margin-top: 10px;
+    margin-left: 7px;
+  }
+  
+  .plan-card input[type="radio"]:checked + .plan-content {
+    background: #5ab9ea;
+    color: black;
+    border-radius: 10px;
+  }
+  
+  .plan-card input[type="radio"]:checked + .plan-content h3,
+  .plan-card input[type="radio"]:checked + .plan-content ul,
+  .plan-card input[type="radio"]:checked + .plan-content .price {
+    color: white;
+  }
+  
+  .plan-card.premium .tag {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    background: white;
+    color: #5ab9ea;
+    font-size: 14px;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #5ab9ea;
+    z-index: 1;
+  }
+
+  .next-button-container {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .next-button {
+    background-color: gray;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .next-button:hover {
+    background-color:#5ab9ea;
+    color: white;
+  }
+
+  @media (max-width: 400px){
+    .plan-card ul {
+        list-style-type:circle;
+        font-size: 15px;
+        margin-top: 10px;
+        margin-left: 7px;
+      }
+  }
+  
+  
