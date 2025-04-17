@@ -6,11 +6,108 @@
     <title>FitTrack</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="icon" type="image/png" href="/FitTrack/icons/FittrackFavIcon.png">
+    <link rel="icon" type="image/png" href="/AdminDashboard/icons/FittrackFavIcon.png">
     <script type="text/javascript" src="app.js" defer></script>
     <script src="modalss.js"></script>
 </head>
 <body>
+    <nav>
+        <div class="hamburger" onclick="toggleSidebar()">&#9776;</div>
+        <div class="topbar">
+            <label for="search">FitTrack</label>
+            <input type="text" id="search" placeholder="Search...">
+        </div>
+    </nav>
+    <aside class="side-nav" id="sidebar">
+        <ul>
+            <li><a href="Hdashboard.html">Home dashboard</a></li>
+            <li><a href="Approvalpage.html">Approval log</a></li>
+            <li><a href="Attendancepage.html">Attendance log</a></li>
+            <li><a href="managepage.html" class="active">Manage account</a></li>
+        </ul>
+        <ul>
+            <li><a class="btn-logout" onclick="openModal()">Logout</a></li>
+        </ul>
+    </aside>
+    <main class="manage-container">
+        <div class="header">
+          <h3>Account Details</h3>
+        </div>
     
+        <form class="details-form">
+          <div class="form-group">
+            <label>Full Name</label>
+            ABDU, MOHAMMAD AZEEM S.
+          </div>
+    
+          <div class="form-group">
+            <label>Username</label>
+            azeee001
+          </div>
+    
+          <div class="form-group">
+            <label for="membership">Membership Type</label>
+                <select id="membership" name="membership">
+                   <option selected>Pay as you go</option>
+                   <option>Monthly</option>
+                   <option>Annually</option>
+                </select>
+          </div>
+    
+          <div class="form-group">
+            <label>Email</label>
+            azeeeluvluv@gmail.com
+          </div>
+    
+          <div class="form-group">
+            <label>Address</label>
+            Baliwasan Grande Zamboanga City
+          </div>
+    
+          <div class="form-group">
+            <label>Contact No.</label>
+            09XXXXXX456
+          </div>
+
+          <div class="form-group">
+            <label>Weight (kg) / Height (cm)</label>
+            49kg / 149cm
+          </div>
+
+          <div class="form-group">
+            <label>BMI</label>
+            N/A
+          </div>
+
+          <div class="form-group">
+            <label>Emergency Contact</label>
+            <div>Name: Azeem Abdu</div>
+            <div>Relationship: Borther</div>
+            <div>Contact No: 09XXXXXX456</div>
+          </div>
+
+          <div class="form-group">
+            <label>Gender</label>
+            Male
+          </div>
+    
+          <div class="form-actions">
+            <button type="submit" class="btn save">Save Change</button>
+            <button type="button" class="btn cancel">Cancel</button>
+            <button type="button" class="btn delete">Delete Account</button>
+          </div>
+        </form>
+      </main>
+      <footer>FitTrack Version 1.1</footer>
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+          <h2>Confirm Logout</h2>
+          <p>Are you sure you want to log out?</p>
+          <div class="modal-buttons">
+            <button class="confirm" onclick="logout()">Yes, Logout</button>
+            <button class="cancel" onclick="closeModal()">Cancel</button>
+          </div>
+        </div>
+      </div>
 </body>
 </html>
