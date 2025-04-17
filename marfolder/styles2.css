@@ -6,30 +6,28 @@
     margin: 0;
     font-family: Arial, sans-serif;
   }
+
+  body {
+    background: #fff;
+    color: #333;
+    padding: 2rem;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   
   .container {
     display: flex;
     min-height: 100vh;
   }
   
-  .title-sidebar {
-    width: 250px;
-    background-color: #33b5e5;
-    color: white;
-    padding: 20px;
-    flex-shrink: 0;
-  }
-  
   .title-sidebar h2 {
-    margin-top: 0;
-    font-size: 40px;
-  }
-  
-  .sidebar p {
-    margin-top: 120px;
-    margin-bottom: 100px;
-    font-size: 1rem;
-
+    color: #5ab9ea;
+    font-weight: bolder;
+    font-size: 35px;
   }
   
   .step-active {
@@ -66,11 +64,13 @@
     border-radius: 4px;
     width: 100%;
     border: 1px solid #ccc;
+    cursor: pointer;
   }
 
   label{
     font-size: 10px;
     margin-bottom: 7px;
+    cursor: pointer;
   }
   
   .gender-options {
@@ -99,6 +99,24 @@
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+  }
+
+  .step {
+    color: #777;
+    font-weight: bold;
+  }
+
+  .signout {
+    border: none;
+    background: none;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .logo {
+    color: #5ab9ea;
+    font-weight: bolder;
+    font-size: 35px;
   }
   
   /* Responsive styles for screens <= 400px */
@@ -144,6 +162,10 @@
       padding: 12px;
       font-size: 13px;
       border-radius: 5px;
+    }
+
+    .cointaining-step h2{
+      font-size: 20px;
     }
   }
   
