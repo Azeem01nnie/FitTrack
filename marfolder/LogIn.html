@@ -20,17 +20,22 @@
       <div class="logo">FitTrack</div>
       <div class="title" style="color: #5ab9ea;">Login To Get Started</div>
       <div class="subtitle">Welcome Back! User</div>
-      <input type="text" placeholder="Email address or phone number">
-      <input type="password" placeholder="Password">
-      <button class="login-button">Login</button>
-      <div class="or">OR</div>
-      <button class="login-button">Login as admin</button>
-      <div class="signup">
-        Don’t have an account? <a href="registering.html">Sign Up</a>
-      </div>
-      <div class="terms">
-        By signing in, you agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>, including <a href="#">cookie use</a>.
-      </div>
+      <form action="/FitTrack/database/admin_login.php" method="POST">
+        <input type="text" name="username" placeholder="Email address or phone number" required>
+        <input type="password" name="password" placeholder="Password" required>
+      
+        <button class="login-button" type="submit" name="user_login">Login</button>
+        <div class="or">OR</div>
+        <button class="login-button" type="submit" name="admin_login">Login as admin</button>
+      
+        <div class="signup">
+          Don’t have an account? <a href="registering.html">Sign Up</a>
+        </div>
+        <div class="terms">
+          By signing in, you agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>, including <a href="#">cookie use</a>.
+        </div>
+      </form>
+      
     </div>
   </div>
 </body>
