@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home page</title>
+  <link rel="stylesheet" href="HM.css" />
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    
+    <!-- Profile Picture Section -->
+    <div class="profilePic-container">
+      <img src="gym1.jpg" alt="Profile Picture" id="profilePic" class="profilePic" />
+    
+      
+    </div>
+
+    <!-- Sidebar Links -->
+    <nav class="sidebar-links">
+      <a href="../account/profile account.html">Profile Account </a>
+      <a href="../myAttendance/attendance.html">My Attendance</a>
+      <a href="../membershipStatus/membershipStatus.html">Membership Status</a>
+      <a href="../setting/setting.html">Setting</a>
+      <a href="#">Log out</a>
+    </nav>
+  </div>
+
+  <!-- Header -->
+  <div class="header">
+    <div style="display: flex; align-items: center;">
+      <button class="burger" onclick="toggleSidebar()">☰</button>
+      <div class="logo">FitTrack</div>
+    </div>
+    <div class="header-buttons">
+      <button class="Register">Register</button>
+      <button class="Logout">Log Out</button>
+    </div>
+  </div>
+  
+ 
+  <!-- Main Content -->
+  <div id="mainContent">
+    <div class="time-container">
+      <div id="liveClock" class="live-clock">Loading current time...</div>
+      <div id="circle" class="circle-box">
+        <strong>Status</strong>
+      </div>
+      <div class="time-labels">
+        <div id="timeInLabel" class="label">Time In: --</div>
+        <div id="timeOutLabel" class="label">Time Out: --</div>
+      </div>
+      <div class="buttons">
+        <button id="timeInBtn" class="timeInBtn">Time In</button>
+        <button id="timeOutBtn" class="timeOutBtn">Time Out</button>
+      </div>
+    </div>
+  </div> 
+  <!-- Scripts -->
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      const content = document.getElementById("mainContent");
+      sidebar.classList.toggle("active");
+      if(content) content.classList.toggle("with-sidebar");
+    }
+
+    function changeProfile(event) {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        document.getElementById("profilePic").src = e.target.result;
+      };
+      if (file) {
+        reader.readAsDataURL(file);
+      }
+    }
+    const circle = document.getElementById('circle');
+    const timeInBtn = document.getElementById('timeInBtn');
+    const timeOutBtn = document.getElementById('timeOutBtn');
+    const timeInLabel = document.getElementById('timeInLabel');
+    const timeOutLabel = document.getElementById('timeOutLabel');
+    const liveClock = document.getElementById('liveClock');
+
+    function formatDateTime() {
+      const now = new Date();
+      return now.toLocaleString();
+    }
+
+    function updateLiveClock() {
+      const now = new Date();
+      liveClock.textContent = 'Current Time: ' + now.toLocaleString();
+    }
+
+    setInterval(updateLiveClock, 1000);
+    updateLiveClock();
+
+    timeInBtn.onclick = () => {
+      circle.style.backgroundColor = '#a055e9';
+      circle.innerHTML = '<strong>Timed In</strong>';
+      timeInLabel.textContent = 'Time In: ' + formatDateTime();
+    };
+
+    timeOutBtn.onclick = () => {
+      circle.style.backgroundColor = '#50c878';
+      circle.innerHTML = '<strong>Timed Out</strong>';
+      timeOutLabel.textContent = 'Time Out: ' + formatDateTime();
+    };
+  </script>
+</body>
+</html>

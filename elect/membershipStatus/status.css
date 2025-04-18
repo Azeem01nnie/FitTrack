@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: white;
+  }
+  
+  body {
+    background-image: linear-gradient(rgb(252, 254, 255), rgba(173, 216, 230, 0.5));
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3db8f5;
+    padding: 10px 20px;
+    color: white;
+    width: 100%;
+  }
+  
+  .header-buttons button {
+    margin-left: 10px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    background-color: #a055e9;
+  }
+  
+  .back-btn {
+    text-decoration: none; 
+  }
+  
+  .back-button {
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    font-weight: bold;
+  }
+  
+  .back-button:hover {
+    background-color:#a055e9;
+  }
+  
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .label {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .status-container,
+  .reminder-container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    max-width: 600px;
+    width: 100%;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .card p {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+  }
+  
+  .status {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .reminder-container {
+    background: #fff9e6;
+    border: 1px solid #ffe08a;
+  }
+  
+  .reminder-container p {
+    margin-bottom: 1rem;
+    color: #8a6d3b;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: right;
+  }
+  
+  .buttons a {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .renew {
+    background-color: #28a745;
+  }
+  
+  .view {
+    background-color: #007bff;
+  }
+  
+  .success-message {
+    display: none;
+    margin-top: 1rem;
+    background-color: #d4edda;
+    color: #155724;
+    padding: 1rem;
+    border: 1px solid #c3e6cb;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+  }
+  

@@ -1,0 +1,264 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: white;
+}
+
+body {
+  background-image: 
+    linear-gradient(rgba(173, 216, 230, 0.5), rgba(173, 216, 230, 0.5)), 
+    url('gym1.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3db8f5;
+  padding: 10px 20px;
+  color: white;
+  position: relative;
+  z-index: 1001;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Added subtle shadow */
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.header-buttons button {
+  margin-left: 10px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+}
+
+.Register {
+  background-color: #a055e9;
+}
+
+.Logout {
+  background-color: #a055e9;
+}
+
+.burger {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #3db8f5;
+  padding: 20px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: left;
+}
+
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+}
+
+.sidebar a {
+  font-size: 18px;
+  padding: 14px 20px;
+  text-align: left;
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.sidebar a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.mainContent {
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+.mainContent.with-sidebar {
+  margin-left: 250px;
+}
+
+.table-container {
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+th {
+  background-color: #3db8f5;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .mainContent.with-sidebar {
+    margin-left: 200px;
+  }
+}
+
+.profilePic {
+  margin: 10px auto;
+  display: block;
+  width:150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid white;
+  object-fit: cover;
+  display: flex;
+}
+
+.profilePic-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.profilePic-container label {
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.profilePic-container input {
+  display: none;
+}
+
+#mainContent {
+  margin-left: 250px;
+  padding: 40px;
+}
+
+.time-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  
+  height: calc(100vh - 100px);
+}
+
+.live-clock {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.circle-box {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  transition: background-color 0.3s ease;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.time-labels {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.label {
+  font-size: 14px;
+  color: #ffffff;
+  text-align: center;
+  min-width: 100px;
+}
+
+.buttons {
+  display: flex;
+  gap: 40px;
+}
+
+.timeInBtn, .timeOutBtn {
+  padding: 16px 32px;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.timeInBtn {
+  background-color: #a055e9;
+  color: white;
+}
+
+.timeOutBtn {
+  background-color: #50c878;
+  color: white;
+}
