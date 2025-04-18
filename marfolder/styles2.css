@@ -131,6 +131,7 @@
     background: none;
     font-size: 1rem;
     cursor: pointer;
+    color: black;
   }
   
   /* Responsive styles for screens <= 400px */
