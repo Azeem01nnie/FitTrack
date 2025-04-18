@@ -1,38 +1,46 @@
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: Arial, sans-serif;
-}
-body {
+  }
+  
+  body {
+    background: #fff;
+    color: #333;
+    padding: 2rem;
+  }
+  
+  header {
     display: flex;
-    height: 100vh;
-    background-color: white;
-}
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    color: #5ab9ea;
+    font-weight: bolder;
+    font-size: 35px;
+  }
+  
+  .signout {
+    border: none;
+    background: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: black;
+  }
+  
+  .step {
+    margin-top: 2rem;
+    color: #777;
+    font-weight: bold;
+  }
+  
+  h2 {
+    margin: 0.5rem 0 2rem;
+  }
 
-.sidebar {
-    width: 25%;
-    background-color: #5ab9ea;
-    color: white;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.sidebar h2 {
-    font-size: 65px;
-    margin-bottom: 30px;
-    font-family: "Outfit-Black", Helvetica;
-    font-weight: 900;
-}
-.sidebar .step {
-    margin: 50px ;
-    opacity: 0.6;
-}
-.sidebar .step-active {
-    opacity: 1;
-    margin: 50px;
-}
 .container {
     background: white;
     padding: 20px;
@@ -49,11 +57,7 @@ body {
     font-size: 20px;
     font-family: "Outfit-Medium", Helvetica;
 }
-.button-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 5px;
-}
+
 button {
     padding: 10px 15px;
     border: none;

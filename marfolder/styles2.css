@@ -5,6 +5,7 @@
   body {
     margin: 0;
     font-family: Arial, sans-serif;
+    padding: 2rem;
   }
   
   .container {
@@ -56,6 +57,7 @@
   }
   
   .form-group input[type="text"],
+  .form-group input[type="password"],
   .form-group input[type="email"],
   .form-group input[type="tel"],
   .form-group input[type="number"],
@@ -101,6 +103,35 @@
     cursor: pointer;
     font-size: 16px;
   }
+
+  .step {
+    margin-top: 2rem;
+    color: #777;
+    font-weight: bold;
+  }
+  
+  h2 {
+    margin: 0.5rem 0 2rem;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    color: #5ab9ea;
+    font-weight: bolder;
+    font-size: 35px;
+  }
+
+  .signout {
+    border: none;
+    background: none;
+    font-size: 1rem;
+    cursor: pointer;
+  }
   
   /* Responsive styles for screens <= 400px */
   @media (max-width: 400px) {
@@ -145,6 +176,10 @@
       padding: 12px;
       font-size: 13px;
       border-radius: 5px;
+    }
+
+    .form-group{
+      display: flex;
     }
   }
   
