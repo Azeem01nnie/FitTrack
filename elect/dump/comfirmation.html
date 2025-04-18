@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Frame</title>
+    <link rel="stylesheet" href="stylesheet1.css">
+   
+   
+</head>
+<body>
+    
+    <div class="container">
+        <header>
+            <div class="Logo"><solid> FitTrack</solid></div>
+        </header>
+        
+        <div class="progress-container">
+            <div class="circle active" id="pendingCircle"></div>
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+            <div class="circle" id="confirmedCircle"></div>
+        </div>
+    
+        <div class="status-container">
+            <div class="status-label active" id="pendingLabel">Pending</div>
+            <div class="status-label" id="confirmedLabel">Confirmed</div>
+        </div>
+
+        
+        <p class="note"><strong>Note: Proceed to the reception desk to complete payment</strong></p>
+        <p class="status-text">
+            
+        <div class="details">
+            <nav>
+                <p>Receipt No:</p>
+                <p>Name:</p>
+                <p>Address:</p>
+                <p>Date:</p>
+                <p>Member Number:</p>
+            </nav>
+        </div>
+       
+        
+
+        <table class border="1">
+            <table class="custom-table">
+            <tr>
+                <td>Number</td>
+                <td>09912345678</td>
+            </tr>
+            <tr class="highlight">
+                <td>Date of Transaction</td>
+                <td>April 1, 2025</td>
+            </tr>
+            <tr>
+                <td>Amount</td>
+                <td>₱1,500</td>
+            </tr>
+        </table>
+        <script>
+         setTimeout(() => {
+            document.getElementById("progress").style.width = "100%"; // Move progress bar
+            document.querySelector(".confirmed").classList.add("active"); // Highlight Confirmed
+            document.querySelector(".pending").classList.remove("active"); // Remove Pending highlight
+        }, 2000); // Delay of 2 seconds before confirming
+        </script>
+    </div>
+    <button class="button">Proceed</button>
+    <body>
+       
+    <html>

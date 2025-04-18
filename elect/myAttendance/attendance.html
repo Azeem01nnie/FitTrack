@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Attendance</title>
+  <link rel="stylesheet" href="attend.css" />
+  
+</head>
+<body>
+    
+     <div class="header">
+        <div style="display: flex; align-items: center;">
+     
+          <a href="../homepage/home page.html" class="back-btn">
+            <button class="back-button">←</button>
+          </a>
+          
+        </div>
+     
+        <div class="header-buttons">
+          <button class="Register">Register</button>
+          <button class="Logout">Log Out</button>
+        </div>
+      </div>
+  <div class="container">
+
+   
+    <div class="today-status-container">
+      <h3><i class="fas fa-calendar-day"></i> Today's Status</h3>
+      <p><i class="fas fa-check-circle"></i> You checked in at 7:15 AM</p>
+      <p><i class="fas fa-stopwatch"></i> Time in gym: 1 hour 40 mins</p>
+      <p><i class="far fa-clock"></i> Still in gym or</p>
+      <p><i class="far fa-clock"></i> Checked out at 8:55 AM</p>
+    </div>
+
+    
+    <div class="attendance-container">
+      <h2>My Attendance</h2>
+      <div class="attendance-header">
+        <i class="fas fa-calendar-alt"></i>
+        <span>Attendance History </span>
+      </div>
+
+      <table class="attendance-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Time In</th>
+            <th>Time Out</th>
+            <th>Duration</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Apr 18, 2025</td>
+            <td>7:10 AM</td>
+            <td>9:15 AM</td>
+            <td>2h 5m</td>
+            <td class="status present">
+              <i class="fas fa-check-circle"></i> Present
+            </td>
+            <td><i class="fas fa-ellipsis-h"></i></td>
+          </tr>
+          <tr>
+            <td>Apr 17, 2025</td>
+            <td>6:45 AM</td>
+            <td>8:00 AM</td>
+            <td>1h 15m</td>
+            <td class="status present">
+              <i class="fas fa-check-circle"></i> Present
+            </td>
+            <td><i class="fas fa-ellipsis-h"></i></td>
+          </tr>
+          <tr>
+            <td>Apr 16, 2025</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td class="status absent">
+              <i class="fas fa-times-circle"></i> Absent
+            </td>
+            <td><i class="fas fa-ellipsis-h"></i></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</body>
+</html>

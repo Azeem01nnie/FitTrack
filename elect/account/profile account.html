@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edit Profile - FitTrack</title>
+  <link rel="stylesheet" href="profile1.css">
+  <script hrref="profile.js"></script>
+</head>
+<body>
+    <!-- Header --> 
+    <div class="header">
+      <div style="display: flex; align-items: center;">
+        <!-- Back button -->
+        <a href="../homepage/home page.html" class="back-btn">
+          <button class="back-button">←</button>
+        </a>
+        
+      </div>
+   
+      <div class="header-buttons">
+        <button class="Register">Register</button>
+        <button class="Logout">Log Out</button>
+      </div>
+    </div>
+  
+   
+    <div class="container" id="mainContent">
+      <div class="profilePic-container">
+        <label for="fileInput">
+          <img src="gym1.jpg" alt="Profile Picture" id="profilePic" class="profilePic" />
+        </label>
+        <input type="file" id="fileInput" accept="image/*" style="display: none;" onchange="updateProfilePic(event)" />
+      </div>
+    </div>
+    
+  
+      <!-- Form Rows -->
+      <div class="form-row">
+        <div class="header-label">
+          <label>FIRST NAME</label>
+        </div>
+        <div class="info-group">
+          <p>Mikey</p>
+        </div>
+      </div>
+  
+      <div class="form-row">
+        <div class="header-label">
+          <label>LAST NAME</label>
+        </div>
+        <div class="info-group">
+          <p>Madison</p>
+        </div>
+      </div>
+  
+      <div class="form-row">
+        <div class="header-label">
+          <label>EMAIL</label>
+        </div>
+        <div class="info-group">
+          <p>mikey.madison@example.com</p>
+        </div>
+      </div>
+  
+      <div class="form-row">
+        <div class="header-label">
+          <label>PHONE NUMBER</label>
+        </div>
+        <div class="info-group">
+          <p>09123456710</p>
+        </div>
+      </div>
+  
+      <button class="delete-btn">Delete Account</button>
+    </div>
+  </body>
+<html>

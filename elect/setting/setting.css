@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: white;
+  }
+  
+  body {
+    background-image: linear-gradient(rgb(252, 254, 255), rgba(173, 216, 230, 0.5));
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Header Styles */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3db8f5;
+    padding: 10px 20px;
+    color: white;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Added subtle shadow */
+  }
+  
+  .header-buttons button {
+    margin-left: 10px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    background-color: #a055e9;
+  }
+  
+  .back-btn {
+    text-decoration: none;
+  }
+  
+  .back-button {
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    font-weight: bold;
+  }
+  
+  .back-button:hover {
+    background-color: #a055e9;
+  }
+  
+  /* Settings Container */
+  .settings-container {
+    max-width: 500px;
+    margin: 80px auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Label Style */
+  .label {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
+  }
+  
+  /* Button Container */
+  .button-container {
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 5px;
+  }
+  
+  /* Option Button inside the button-container */
+  .option-button {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    background-color: white;
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: all 0.3s ease;
+  }
+  
+  .option-button:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 6px 10px rgba
+  }
