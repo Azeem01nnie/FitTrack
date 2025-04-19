@@ -21,7 +21,7 @@
     align-items: center;
   }
   
-  /* Header Section */
+ 
   .header {
     display: flex;
     justify-content: space-between;
@@ -60,7 +60,7 @@
     background-color: #a055e9;
   }
   
-  /* Containers */
+  
   .attendance-container,
   .today-status-container {
     background-color: #fff;
@@ -69,13 +69,13 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
-  /* Headings */
+  
   h2, h3 {
     color: #333;
     margin-bottom: 15px;
   }
   
-  /* Attendance Header */
+  
   .attendance-header {
     display: flex;
     align-items: center;
@@ -87,7 +87,7 @@
     margin-right: 8px;
   }
   
-  /* Attendance Table */
+  
   .attendance-table {
     width: 100%;
     border-collapse: collapse;
@@ -124,7 +124,7 @@
     border-bottom: none;
   }
   
-  /* Status Styling */
+  
   .status {
     display: flex;
     align-items: center;
@@ -143,7 +143,7 @@
     color: red;
   }
   
-  /* Today Status Box */
+
   .today-status-container {
     background-color: #f0f8ff;
     border: 1px solid #e0f2f7;

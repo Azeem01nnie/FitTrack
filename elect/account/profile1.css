@@ -42,8 +42,7 @@ body {
   padding: 15px 20px;
   color: white;
   width: 100%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Added subtle shadow */
-  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
   z-index: 1001;
 }
 
@@ -115,7 +114,7 @@ body {
 
 .info-group {
   width: 100%;
-  padding: 5px 10px; /* Reduced padding for a tighter feel */
+  padding: 5px 10px; 
   max-width: 300px;
   background-color: white;
   color: rgb(68, 42, 42);
@@ -127,7 +126,7 @@ body {
   display: block;
   width: 100%;
   max-width: 300px;
-  margin: 15px auto 30px auto; /* top, sides auto, bottom */
+  margin: 15px auto 30px auto;
   padding: 12px 20px;
   background-color: red;
   color: white;
@@ -145,7 +144,7 @@ body {
   background-color: darkred;
 }
 .back-btn {
-  text-decoration: none; /* Remove default link styling */
+  text-decoration: none; 
 }
 
 .back-button {

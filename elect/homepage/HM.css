@@ -40,7 +40,7 @@ body {
   position: relative;
   z-index: 1001;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Added subtle shadow */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
 }
 
 .logo {
