@@ -17,10 +17,10 @@
         </video>
       </div>
     <div class="login-section">
-      <div class="logo">FitTrack | Admin Mode</div>
+      <div class="logo">FitTrack</div>
       <div class="title" style="color: #5ab9ea;">Login To Get Started</div>
-      <div class="subtitle">Access user login! click <a href="LoginUser.php">here.</a></div>
-      <form action="admin_login.php" method="POST">
+      <div class="subtitle">Access admin login! click <a href="LogIn.php">here.</a></div>
+      <form action="user_login.php" method="POST">
         <input type="text" name="username" placeholder="Username" required>
         <input type="password" name="password" placeholder="Password" required>
         <?php if (isset($_GET['error'])): ?>
@@ -28,9 +28,8 @@
           <?= htmlspecialchars($_GET['error']) ?>
           </div>
         <?php endif; ?>
-        <button class="login-button" type="submit" name="admin_login">Login as admin</button>
+        <button class="login-button" type="submit" name="user_login">Login</button>
         <div class="or">OR</div>
-      
         <div class="signup">
           Don’t have an account? <a href="registering.html">Sign Up</a>
         </div>

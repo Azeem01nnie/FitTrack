@@ -63,6 +63,11 @@
     margin-bottom: 30px;
   }
   
+  .subtitle a {
+    text-decoration: none;
+    color: black;
+  }
+  
   .socials {
     display: flex;
     gap: 15px;
@@ -189,7 +194,8 @@
     }
 
     .subtitle {
-      display: none;
+      font-size: 12px;
+      margin-bottom: 8px;
     }
 
     input {
