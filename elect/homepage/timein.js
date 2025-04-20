@@ -35,17 +35,35 @@ function toggleSidebar() {
   setInterval(updateLiveClock, 1000);
   updateLiveClock();
 
-  timeInBtn.onclick = () => {
+  let hasTimedIn = false;
+let hasTimedOut = false;
+
+circle.onclick = () => {
+  if (!hasTimedIn) {
     circle.style.backgroundColor = '#a055e9';
     circle.innerHTML = '<strong>Timed In</strong>';
     timeInLabel.textContent = 'Time In: ' + formatDateTime();
-  };
-
-  timeOutBtn.onclick = () => {
+    document.getElementById("refreshIcon").style.display = "inline";
+    hasTimedIn = true;
+  } else if (!hasTimedOut) {
     circle.style.backgroundColor = '#50c878';
     circle.innerHTML = '<strong>Timed Out</strong>';
     timeOutLabel.textContent = 'Time Out: ' + formatDateTime();
-  };
+    hasTimedOut = true;
+  } else {
+    alert("Press the Refresh button for the next session.");
+  }
+};
+
+document.getElementById("refreshIcon").onclick = () => {
+  hasTimedIn = false;
+  hasTimedOut = false;
+  circle.style.backgroundColor = '#4A90E2';
+  circle.innerHTML = '<strong>Press</strong>';
+  timeInLabel.textContent = 'Time In: --';
+  timeOutLabel.textContent = 'Time Out: --';
+  document.getElementById("refreshIcon").style.display = "none";
+};
 
   function openModal() {
     document.getElementById("logoutModal").style.display = "block";

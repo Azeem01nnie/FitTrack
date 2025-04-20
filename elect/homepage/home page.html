@@ -37,18 +37,20 @@
   </div>
   
   <div id="mainContent">
-    <div class="time-container">
+    <div id="liveClockContainer" class="live-clock-container">
       <div id="liveClock" class="live-clock">Loading current time...</div>
+      <span id="refreshIcon" class="refresh-icon" title="Refresh session">
+        🔄 Refresh Session
+      </span>
+    </div>    
       <div id="circle" class="circle-box">
-        <strong>Status</strong>
+        <strong>Press</strong>
       </div>
       <div class="time-labels">
         <div id="timeInLabel" class="label">Time In: --</div>
-        <div id="timeOutLabel" class="label">Time Out: --</div>
       </div>
-      <div class="buttons">
-        <button id="timeInBtn" class="timeInBtn">Time In</button>
-        <button id="timeOutBtn" class="timeOutBtn">Time Out</button>
+      <div class="time-labels">
+        <div id="timeOutLabel" class="label">Time Out: --</div>
       </div>
     </div>
   </div>

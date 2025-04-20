@@ -17,7 +17,6 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  position: relative;
   overflow-x: hidden;
 }
 
@@ -117,6 +116,7 @@ body {
 .mainContent {
   padding: 20px;
   transition: margin-left 0.3s ease;
+  height: 70%;
 }
 
 .mainContent.with-sidebar {
@@ -240,8 +240,10 @@ th {
 }
 
 #mainContent {
-  margin-left: 250px;
+  margin-top: 80px;
+  margin-left: 700px;
   padding: 40px;
+
 }
 
 .time-container {
@@ -254,15 +256,38 @@ th {
 }
 
 .live-clock {
-  font-size: 18px;
+  color: black;
+  font-size: 15px;
   margin-bottom: 20px;
 }
+
+.live-clock-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.refresh-icon {
+  display: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
+    bottom: 12px;
+}
+
+.refresh-icon:hover {
+  color: #1d65b6;
+}
+
 
 .circle-box {
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  background-color: gray;
+  background-color: #4A90E2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -270,7 +295,9 @@ th {
   transition: background-color 0.3s ease;
   font-size: 24px;
   font-weight: bold;
+  cursor: pointer; /* ✅ make it act like a button */
 }
+
 
 .time-labels {
   display: flex;
@@ -280,7 +307,7 @@ th {
 
 .label {
   font-size: 14px;
-  color: #ffffff;
+  color: black;
   text-align: center;
   min-width: 100px;
 }
@@ -306,4 +333,41 @@ th {
 .timeOutBtn {
   background-color: #50c878;
   color: white;
+}
+
+@media (max-width: 450px){
+
+  #mainContent {
+    margin: 50px auto;
+    padding: 40px;
+  }
+
+  .label {
+    font-size: 10px;
+    color: black;
+  }
+
+  .circle-box {
+    width: 250px;
+    margin: 10px auto;
+    align-items:center ;
+    height: 180px;
+  }
+
+  .live-clock{
+    font-size: 10px;
+  }
+
+  .refresh-icon{
+    font-size: 10px;
+    color: black;
+    position: relative;
+    bottom: 12px;
+  }
+
+  .time-labels {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+  }
 }
