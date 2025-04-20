@@ -38,7 +38,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #3db8f5;
+    background-color: #4A90E2;
     padding: 15px 20px;
     color: white;
     width: 100%;
@@ -58,11 +58,6 @@
     border-radius: 4px;
     cursor: pointer;
     color: white;
-  }
-  
-  .Register,
-  .Logout {
-    background-color: #a055e9;
   }
   
   .profilePic {
@@ -129,7 +124,7 @@
     max-width: 300px;
     margin: 15px auto 30px auto;
     padding: 12px 20px;
-    background-color: #a055e9;
+    background-color: #4A90E2;
     color: white;
     font-weight: bold;
     border: none;
@@ -157,20 +152,17 @@
     padding: 10px;
     font-weight: bold;
   }
-  .back-button:hover{
-    background-color:#a055e9;
-  }
   .profilePic-container label {
     cursor: pointer;
     color: white;
     font-size: 14px;
     text-decoration: underline;
-    background-color: #a055e9; /* Violet Color */
+    background-color: #4A90E2; /* Violet Color */
     padding: 8px 16px;
     border-radius: 4px;
     transition: background-color 0.3s ease;
 }
 
 .profilePic-container label:hover {
-    background-color: #7f3c9d;
+    background-color: blue;
 }

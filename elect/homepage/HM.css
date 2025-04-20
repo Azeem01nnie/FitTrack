@@ -34,7 +34,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #3db8f5;
+  background-color: #4A90E2;
   padding: 10px 20px;
   color: white;
   position: relative;
@@ -58,14 +58,6 @@ body {
   color: white;
 }
 
-.Register {
-  background-color: #a055e9;
-}
-
-.Logout {
-  background-color: #a055e9;
-}
-
 .burger {
   font-size: 24px;
   background: none;
@@ -81,7 +73,7 @@ body {
   left: -250px;
   width: 250px;
   height: 100%;
-  background-color: #3db8f5;
+  background-color: #4A90E2;
   padding: 20px;
   transition: left 0.3s ease;
   z-index: 1000;
@@ -149,7 +141,58 @@ th, td {
 }
 
 th {
-  background-color: #3db8f5;
+  background-color: #4A90E2;
+  color: white;
+}
+
+/*LOGOUT MODAL*/
+/*LOGOUT MODAL*/
+/*LOGOUT MODAL*/
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  font-family: sans-serif;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  margin: 15% auto;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-content h2 {
+  color: #4A90E2;
+  margin-bottom: 3px;
+}
+
+.modal-buttons {
+  margin-top: 20px;
+}
+
+.modal-buttons button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirm {
+  background-color: #4A90E2;
+  color: white;
+}
+
+.cancel {
+  background-color: #4A90E2;
   color: white;
 }
 
@@ -175,6 +218,8 @@ th {
 }
 
 .profilePic-container {
+  position: relative;
+  top: 10px;
   width: 100%;
   display: flex;
   flex-direction: column;

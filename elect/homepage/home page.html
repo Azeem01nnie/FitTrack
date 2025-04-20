@@ -24,7 +24,7 @@
       <a href="../myAttendance/attendance.html">My Attendance</a>
       <a href="../membershipStatus/membershipStatus.html">Membership Status</a>
       <a href="../setting/setting.html">Setting</a>
-      <a href="#">Log out</a>
+      <a class="btn-logout" onclick="openModal()">Logout</a>
     </nav>
   </div>
 
@@ -34,14 +34,8 @@
       <button class="burger" onclick="toggleSidebar()">☰</button>
       <div class="logo">FitTrack</div>
     </div>
-    <div class="header-buttons">
-      <button class="Register">Register</button>
-      <button class="Logout">Log Out</button>
-    </div>
   </div>
   
- 
-
   <div id="mainContent">
     <div class="time-container">
       <div id="liveClock" class="live-clock">Loading current time...</div>
@@ -57,57 +51,17 @@
         <button id="timeOutBtn" class="timeOutBtn">Time Out</button>
       </div>
     </div>
-  </div> 
-  
-  <script>
-    function toggleSidebar() {
-      const sidebar = document.getElementById("sidebar");
-      const content = document.getElementById("mainContent");
-      sidebar.classList.toggle("active");
-      if(content) content.classList.toggle("with-sidebar");
-    }
-
-    function changeProfile(event) {
-      const file = event.target.files[0];
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        document.getElementById("profilePic").src = e.target.result;
-      };
-      if (file) {
-        reader.readAsDataURL(file);
-      }
-    }
-    const circle = document.getElementById('circle');
-    const timeInBtn = document.getElementById('timeInBtn');
-    const timeOutBtn = document.getElementById('timeOutBtn');
-    const timeInLabel = document.getElementById('timeInLabel');
-    const timeOutLabel = document.getElementById('timeOutLabel');
-    const liveClock = document.getElementById('liveClock');
-
-    function formatDateTime() {
-      const now = new Date();
-      return now.toLocaleString();
-    }
-
-    function updateLiveClock() {
-      const now = new Date();
-      liveClock.textContent = 'Current Time: ' + now.toLocaleString();
-    }
-
-    setInterval(updateLiveClock, 1000);
-    updateLiveClock();
-
-    timeInBtn.onclick = () => {
-      circle.style.backgroundColor = '#a055e9';
-      circle.innerHTML = '<strong>Timed In</strong>';
-      timeInLabel.textContent = 'Time In: ' + formatDateTime();
-    };
-
-    timeOutBtn.onclick = () => {
-      circle.style.backgroundColor = '#50c878';
-      circle.innerHTML = '<strong>Timed Out</strong>';
-      timeOutLabel.textContent = 'Time Out: ' + formatDateTime();
-    };
-  </script>
+  </div>
+  <div id="logoutModal" class="modal">
+    <div class="modal-content">
+      <h2>Confirm Logout</h2>
+      <p>Are you sure you want to log out?</p>
+      <div class="modal-buttons">
+        <button class="confirm" onclick="logout()">Yes, Logout</button>
+        <button class="cancel" onclick="closeModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+  <script src="timein.js"></script>
 </body>
 </html>

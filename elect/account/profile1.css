@@ -60,11 +60,6 @@ body {
   color: white;
 }
 
-.Register,
-.Logout {
-  background-color: #a055e9;
-}
-
 .profilePic {
   margin: 10px auto;
   display: block;
@@ -155,7 +150,4 @@ body {
   cursor: pointer;
   padding: 10px;
   font-weight: bold;
-}
-.back-button:hover{
-  background-color:#a055e9;
 }

@@ -25,7 +25,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #3db8f5;
+    background-color: #4A90E2;
     padding: 10px 20px;
     color: white;
     width: 100%;
@@ -53,10 +53,6 @@
     cursor: pointer;
     padding: 10px;
     font-weight: bold;
-  }
-  
-  .back-button:hover {
-    background-color:#a055e9;
   }
   
   .main-container {
