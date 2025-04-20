@@ -11,5 +11,5 @@ function openModal() {
     alert("You have been logged out.");
     closeModal();
     // Redirect to login.html after logout
-    window.location.href = "/marfolder/LogIn.html";
+    window.location.href = "http://localhost/myprojects/FiTrackElective/FitTrack/marfolder/LogIn.php";
   }
