@@ -1,5 +1,4 @@
 <?php
-
 $conn = new mysqli("localhost", "root", "", "fittrack_db");
 
 if ($conn->connect_error) {
@@ -8,7 +7,7 @@ if ($conn->connect_error) {
 
 $fullname = $_POST['fullname'];
 $username = $_POST['username'];
-$password = $_POST['password'];
+$password = $_POST['password']; // No password_hash here
 $dob = $_POST['dob'];
 $gender = $_POST['gender'];
 $email = $_POST['email'];
@@ -25,7 +24,9 @@ $emergencyFirst = $_POST['emergencyFirst'];
 $emergencyMobile = $_POST['emergencyMobile'];
 $relationship = $_POST['relationship'];
 
+$approval_status = 'pending'; // Assign to variable first
 
+// Check for duplicate username or email
 $sql = "SELECT * FROM users WHERE username = ? OR email = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("ss", $username, $email);
@@ -33,23 +34,26 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
-    
     header("Location: Register.php?error=duplicate");
     exit();
 }
+$stmt->close();
 
+// Insert the user
 $stmt = $conn->prepare("INSERT INTO users (
     full_name, username, password_hash, dob, gender, email, mobile, address,
-    height_cm, weight_kg, bmi, emergency_lastname, emergency_firstname, emergency_mobile, relationship, plan, approval_status
-) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    height_cm, weight_kg, bmi, emergency_lastname, emergency_firstname,
+    emergency_mobile, relationship, plan, approval_status
+) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
 if (!$stmt) {
     die("Prepare failed: " . $conn->error);
 }
 
+// Now bind all parameters
 $stmt->bind_param("ssssssssdddsissss",
-    $fullname, $username, $passwordHash, $dob, $gender, $email, $mobile, $address,
-    $height, $weight, $bmi, $emergencyLast, $emergencyFirst, $emergencyMobile, $relationship, $plan, 'pending'
+    $fullname, $username, $password, $dob, $gender, $email, $mobile, $address,
+    $height, $weight, $bmi, $emergencyLast, $emergencyFirst, $emergencyMobile, $relationship, $plan, $approval_status
 );
 
 if ($stmt->execute()) {

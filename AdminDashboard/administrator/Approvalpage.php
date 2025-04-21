@@ -21,6 +21,7 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="icon" type="image/png" href="/AdminDashboard/icons/FittrackFavIcon.png">
     <script type="text/javascript" src="app.js" defer></script>
+    <script src="app.js"></script>
     <script src="modalss.js"></script>
 </head>
 <body>
@@ -44,6 +45,15 @@ $result = $conn->query($sql);
     </aside>
     <main class="main-content">
         <h3>Account Approval Log</h3>
+        <div class="sort-section">
+            <label>Sort by:</label>
+            <select id="sort-options" class="sort-btn">
+                <option value="a-z">A - Z</option>
+                <option value="z-a">Z - A</option>
+                <option value="recent">Most Recent</option>
+                <option value="oldest">Oldest</option>
+            </select>
+        </div>
         <div class="approval-container">
             <table>
                 <thead>
@@ -75,6 +85,61 @@ $result = $conn->query($sql);
         </div>
     </main>
     <footer>FitTrack Version 1.1</footer>
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+          <h2>Confirm Logout</h2>
+          <p>Are you sure you want to log out?</p>
+          <div class="modal-buttons">
+            <button class="confirm" onclick="logout()">Yes, Logout</button>
+            <button class="cancel" onclick="closeModal()">Cancel</button>
+          </div>
+        </div>
+      </div>
+      <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("search");
+    const sortSelect = document.getElementById("sort-options");
+    const tableBody = document.querySelector("tbody");
+
+    searchInput.addEventListener("input", function () {
+        const filter = searchInput.value.toLowerCase();
+        const rows = tableBody.querySelectorAll("tr");
+
+        rows.forEach(row => {
+            const text = row.textContent.toLowerCase();
+            row.style.display = text.includes(filter) ? "" : "none";
+        });
+    });
+
+    sortSelect.addEventListener("change", function () {
+        const rowsArray = Array.from(tableBody.querySelectorAll("tr"));
+        const sortType = sortSelect.value;
+
+        rowsArray.sort((a, b) => {
+            const aText = a.children[2].textContent.toLowerCase(); // full name
+            const bText = b.children[2].textContent.toLowerCase();
+            const aDate = new Date(a.children[0].textContent);
+            const bDate = new Date(b.children[0].textContent);
+
+            switch (sortType) {
+                case "a-z":
+                    return aText.localeCompare(bText);
+                case "z-a":
+                    return bText.localeCompare(aText);
+                case "recent":
+                    return bDate - aDate;
+                case "oldest":
+                    return aDate - bDate;
+                default:
+                    return 0;
+            }
+        });
+
+        rowsArray.forEach(row => tableBody.appendChild(row));
+    });
+});
+</script>
+
 </body>
 </html>
 

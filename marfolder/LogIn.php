@@ -32,7 +32,7 @@
         <div class="or">OR</div>
       
         <div class="signup">
-          Don’t have an account? <a href="Register.html">Sign Up</a>
+          Don’t have an account? <a href="Register.php">Sign Up</a>
         </div>
         <div class="terms">
           By signing in, you agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>, including <a href="#">cookie use</a>.
