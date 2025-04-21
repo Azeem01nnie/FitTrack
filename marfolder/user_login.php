@@ -17,8 +17,10 @@ if (isset($_POST['user_login'])) {
 
     if ($result->num_rows === 1) {
         $user = $result->fetch_assoc();
-
-        // Use password_verify if using hashed passwords
+        if ($user['approval_status'] !== 'approved') {
+            header("Location: logIn.php?error=Your+account+is+not+yet+approved");
+            exit();
+        }
         if ($password === $user['password_hash']) {
             $_SESSION['user_id'] = $user['user_id'];
             $_SESSION['user_name'] = $user['full_name'];

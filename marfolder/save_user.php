@@ -16,29 +16,44 @@ $mobile = $_POST['mobile'];
 $address = $_POST['address'];
 $height = $_POST['height'];
 $weight = $_POST['weight'];
+$plan = $_POST['plan'];
+
 $bmi = ($height > 0) ? round($weight / (($height / 100) ** 2), 2) : null;
+
 $emergencyLast = $_POST['emergencyLast'];
 $emergencyFirst = $_POST['emergencyFirst'];
 $emergencyMobile = $_POST['emergencyMobile'];
 $relationship = $_POST['relationship'];
 
 
+$sql = "SELECT * FROM users WHERE username = ? OR email = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("ss", $username, $email);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+    
+    header("Location: Register.php?error=duplicate");
+    exit();
+}
+
 $stmt = $conn->prepare("INSERT INTO users (
     full_name, username, password_hash, dob, gender, email, mobile, address,
-    height_cm, weight_kg, bmi, emergency_lastname, emergency_firstname, emergency_mobile, relationship
-) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    height_cm, weight_kg, bmi, emergency_lastname, emergency_firstname, emergency_mobile, relationship, plan, approval_status
+) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
 if (!$stmt) {
     die("Prepare failed: " . $conn->error);
 }
 
-$stmt->bind_param("ssssssssdddsiss",
-    $fullname, $username, $password, $dob, $gender, $email, $mobile, $address,
-    $height, $weight, $bmi, $emergency_lastname, $emergency_firstname, $emergency_mobile, $relationship
+$stmt->bind_param("ssssssssdddsissss",
+    $fullname, $username, $passwordHash, $dob, $gender, $email, $mobile, $address,
+    $height, $weight, $bmi, $emergencyLast, $emergencyFirst, $emergencyMobile, $relationship, $plan, 'pending'
 );
 
 if ($stmt->execute()) {
-    header("Location: terms.html");
+    header("Location: acc_success.html");
     exit();
 } else {
     echo "Error: " . $stmt->error;

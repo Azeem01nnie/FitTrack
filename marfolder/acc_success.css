@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #f0f4f8;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .success-box {
+    text-align: center;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+  
+  .checkmark-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #4A90E2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px auto;
+    animation: pop 0.5s ease;
+  }
+  
+  .checkmark {
+    font-size: 60px;
+    color: white;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  p {
+    color: #666;
+    margin-bottom: 30px;
+  }
+  
+  .redirect-btn {
+    padding: 12px 30px;
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .redirect-btn:hover {
+    background-color: #357ABD;
+  }
+  
+  @keyframes pop {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  
