@@ -23,8 +23,9 @@ if (isset($_POST['user_login'])) {
         }
         if ($password === $user['password_hash']) {
             $_SESSION['user_id'] = $user['user_id'];
-            $_SESSION['user_name'] = $user['full_name'];
-            header("Location: ../elect/homepage/home_page.html");
+            $_SESSION['user_name'] = $user['full_name']; // full name
+            $_SESSION['username'] = $user['username'];   // if you need actual username
+            header("Location: ../elect/homepage/home_page.php");
             exit();
         } else {
             header("Location: logIn.php?error=Incorrect+password");
