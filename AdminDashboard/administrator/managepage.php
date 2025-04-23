@@ -53,7 +53,9 @@ $result = $conn->query($sql);
                         <th>Name</th>
                         <th>Membership Type</th>
                         <th>Membership Deadline</th>
-                        <th>Action</th>
+                        <th>Status</th>
+                        <th>Update</th>
+                        <th>Action</th> <!-- New Action Column for Disable/Enable -->
                     </tr>
                 </thead>
                 <tbody>
@@ -78,13 +80,30 @@ $result = $conn->query($sql);
                             <td><?= htmlspecialchars($row['full_name']) ?></td>
                             <td><?= ucfirst($row['plan']) ?></td>
                             <td><?= $deadline ?></td>
+                            <td><?= ucfirst($row['status']) ?></td> <!-- Displaying Status -->
                             <td>
                                 <a href="managepage2.php?user_id=<?= $row['user_id'] ?>">
-                                    <button class="btn"><i class="fa-solid fa-user-gear" style="color: green;"></i></button>
+                                    <button class="btn">
+                                        <i class="fa-solid fa-user-gear" style="color: green;"></i>
+                                    </button>
                                 </a>
-                                <a href="delete_user.php?user_id=<?= $row['user_id'] ?>" onclick="return confirm('Delete <?= $row['full_name'] ?>?')">
-                                    <button class="btn"><i class="fa-solid fa-trash" style="color: red;"></i></button>
-                                </a>
+                            </td>
+                            <td>
+                                <?php if ($row['status'] == 'active'): ?>
+                                    <!-- Disable Button -->
+                                    <a href="disable_user.php?user_id=<?= $row['user_id'] ?>" onclick="return confirm('Disable <?= $row['full_name'] ?>?')">
+                                        <button class="btn" style="background-color: #e74c3c; color: white;">
+                                            <i class="fa-solid fa-ban"></i> 
+                                        </button>
+                                    </a>
+                                <?php else: ?>
+                                    <!-- Re-enable Button -->
+                                    <a href="re_enable_user.php?user_id=<?= $row['user_id'] ?>" onclick="return confirm('Re-enable <?= $row['full_name'] ?>?')">
+                                        <button class="btn" style="background-color: #2ecc71; color: white;">
+                                            <i class="fa-solid fa-check-circle"></i>
+                                        </button>
+                                    </a>
+                                <?php endif; ?>
                             </td>
                         </tr>
                     <?php endwhile; ?>
@@ -105,52 +124,24 @@ $result = $conn->query($sql);
             <button class="cancel" onclick="closeModal()">Cancel</button>
           </div>
         </div>
-      </div>
-      <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const searchInput = document.getElementById("search");
-    const sortSelect = document.getElementById("sort-options");
-    const tableBody = document.querySelector("tbody");
+    </div>
 
-    searchInput.addEventListener("input", function () {
-        const filter = searchInput.value.toLowerCase();
-        const rows = tableBody.querySelectorAll("tr");
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.getElementById("search");
+        const tableBody = document.querySelector("tbody");
 
-        rows.forEach(row => {
-            const text = row.textContent.toLowerCase();
-            row.style.display = text.includes(filter) ? "" : "none";
+        searchInput.addEventListener("input", function () {
+            const filter = searchInput.value.toLowerCase();
+            const rows = tableBody.querySelectorAll("tr");
+
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(filter) ? "" : "none";
+            });
         });
     });
-
-    sortSelect.addEventListener("change", function () {
-        const rowsArray = Array.from(tableBody.querySelectorAll("tr"));
-        const sortType = sortSelect.value;
-
-        rowsArray.sort((a, b) => {
-            const aText = a.children[2].textContent.toLowerCase(); // full name
-            const bText = b.children[2].textContent.toLowerCase();
-            const aDate = new Date(a.children[0].textContent);
-            const bDate = new Date(b.children[0].textContent);
-
-            switch (sortType) {
-                case "a-z":
-                    return aText.localeCompare(bText);
-                case "z-a":
-                    return bText.localeCompare(aText);
-                case "recent":
-                    return bDate - aDate;
-                case "oldest":
-                    return aDate - bDate;
-                default:
-                    return 0;
-            }
-        });
-
-        rowsArray.forEach(row => tableBody.appendChild(row));
-    });
-});
-</script>
-
+    </script>
 </body>
 </html>
 

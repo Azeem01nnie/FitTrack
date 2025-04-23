@@ -47,14 +47,11 @@ $conn->close();
   </nav>
 
   <aside class="side-nav" id="sidebar">
-    <div class="profilePic-container">
-      <img src="gym1.jpg" alt="Profile Picture" id="profilePic" class="profilePic" />
-    </div>
     <ul>
       <li><a href="../account/profiler.php">Profile Account </a></li>
       <li><a href="../myAttendance/attendance.html">My Attendance</a></li>
       <li><a href="../membershipStatus/membershipStatus.html">Membership Status</a></li>
-      <li><a href="../setting/setting.html">Setting</a></li>
+      <li><a href="../setting/setting.php">Setting</a></li>
     </ul>
     <ul>
       <li><a class="btn-logout" onclick="openModal()">Logout</a></li>

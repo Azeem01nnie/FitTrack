@@ -70,7 +70,7 @@ if ($result && $result->num_rows > 0) {
     }
     .header {
       display: flex; justify-content: space-between; align-items: center;
-      background-color: #3db8f5; padding: 15px 20px;
+      background-color: #4A90E2; padding: 15px 20px;
       color: white; width: 100%;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
       z-index: 1001;
@@ -84,6 +84,8 @@ if ($result && $result->num_rows > 0) {
     .container {
       width: 80%;
       font-size: 10px;
+      position: relative;
+      top: 65px;
     }
     .profilePic {
       margin: 10px auto;
@@ -199,15 +201,9 @@ if ($result && $result->num_rows > 0) {
     <a href="../homepage/home_page.php" class="back-btn">
       <button class="back-button">←</button>
     </a>
-    <div class="logo">Profile</div>
   </div>
 
   <div class="container" id="mainContent">
-    <div class="profilePic-container">
-      <label for="fileInput">
-        <img src="gym1.jpg" alt="Profile Picture" id="profilePic" class="profilePic" />
-      </label>
-    </div>
 
     <div class="form-row">
       <div class="header-label"><label>FULL NAME</label></div>

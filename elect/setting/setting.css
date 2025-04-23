@@ -1,3 +1,4 @@
+/* General Body Styles */
 html, body {
   height: 100%;
   margin: 0;
@@ -9,6 +10,7 @@ html, body {
   overflow-x: hidden;
 }
 
+/* Header Styles */
 .header {
   display: flex;
   justify-content: space-between;
@@ -20,16 +22,7 @@ html, body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-.header-buttons button {
-  margin-left: 10px;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  color: white;
-  background-color: #a055e9;
-}
-
+/* Back Button Styling */
 .back-btn {
   text-decoration: none;
 }
@@ -44,7 +37,7 @@ html, body {
   font-weight: bold;
 }
 
-/* This wrapper only affects the center content */
+/* Settings Page Wrapper */
 .settings-wrapper {
   display: flex;
   flex-direction: column;
@@ -58,6 +51,7 @@ html, body {
   color: #333;
 }
 
+/* Settings Page Items */
 .settings-item {
   margin-bottom: 20px;
   width: 500px;
@@ -92,4 +86,104 @@ html, body {
 
 .settings-item button:hover {
   background-color: #0056b3;
+}
+
+/* Profile Picture Section */
+.profile-pic-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-pic {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #007bff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+}
+
+.upload-btn {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Form Group Styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Buttons Row */
+.btn-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.save-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background-color: #e0e0e0;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  display: inline-block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .settings-item,
+  .form-group {
+    width: 90%;
+  }
+
+  .btn-row {
+    flex-direction: column;
+  }
+
+  .save-btn,
+  .cancel-btn {
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .settings-wrapper h3 {
+    font-size: 20px;
+  }
+
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
 }
