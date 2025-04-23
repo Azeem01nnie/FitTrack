@@ -202,8 +202,14 @@ table th, table td {
     text-align: center;
 }
 
+.Box-divider{
+  flex: 1;
+  padding: 20px;
+}
+
 .box {
-    flex: 1;
+  margin-bottom: 10px;
+  margin-left: 2px;
     background: #4A90E2;
     padding: 20px;
     text-align: center;

@@ -36,6 +36,16 @@ $conn->close();
   <link rel="stylesheet" href="HM.css" />
   <link rel="stylesheet" href="/FitTrack/AdminDashboard/administrator/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <style>
+    .sidebar-disabled {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+    .sidebar-enabled {
+      pointer-events: auto;
+      opacity: 1;
+    }
+  </style>
 </head>
 <body>
 
@@ -46,7 +56,7 @@ $conn->close();
     </div>
   </nav>
 
-  <aside class="side-nav" id="sidebar">
+  <aside class="side-nav" id="sidebar" class="sidebar-enabled">
     <ul>
       <li><a href="../account/profiler.php">Profile Account </a></li>
       <li><a href="../myAttendance/attendance.html">My Attendance</a></li>
@@ -66,7 +76,7 @@ $conn->close();
       </span>
     </div>    
     <div id="circle" class="circle-box">
-      <i class="fa-solid fa-power-off fa-beat" style="color: #ffffff; scale: 1.4;"></i>
+      <i class="fa-solid fa-power-off fa-beat" style="color: #ffffff; scale: 1.4;" onclick="timeIn()"></i>
     </div>
     <div class="time-labels">
       <div id="timeInLabel" class="label">Time In: --</div>
@@ -89,12 +99,50 @@ $conn->close();
 
   <script src="attendance.js"></script>
 
-
-  <!-- Pass user_id to JavaScript -->
   <script>
     const loggedInUserId = <?php echo json_encode($_SESSION['user_id']); ?>;
     const fullName = <?php echo json_encode($full_name); ?>;
     document.getElementById('liveClock').textContent = 'Hello, ' + fullName + ' | ' + document.getElementById('liveClock').textContent;
+
+    // Check session for previous state (Time In or Time Out)
+    const isTimeIn = <?php echo json_encode(isset($_SESSION['time_in']) && $_SESSION['time_in'] === true); ?>;
+    
+    if (isTimeIn) {
+      // If time in, disable sidebar
+      document.getElementById('sidebar').classList.add('sidebar-disabled');
+      document.getElementById('timeInLabel').textContent = 'Time In: ' + new Date().toLocaleTimeString();
+    }
+
+    function timeIn() {
+      // Set session to indicate Time In
+      <?php $_SESSION['time_in'] = true; ?>
+
+      // Disable sidebar interaction when Time In is clicked
+      document.getElementById('sidebar').classList.add('sidebar-disabled');
+      
+      // Set the Time In label
+      document.getElementById('timeInLabel').textContent = 'Time In: ' + new Date().toLocaleTimeString();
+    }
+
+    // Refresh session when refresh icon is clicked (re-enable sidebar)
+    document.getElementById("refreshIcon").addEventListener("click", () => {
+      // Enable sidebar interaction
+      document.getElementById('sidebar').classList.remove('sidebar-disabled');
+      
+      // Reset the session for the next cycle
+      <?php $_SESSION['time_in'] = false; ?>
+      document.getElementById('timeInLabel').textContent = 'Time In: --';  // Reset Time In label
+      document.getElementById('timeOutLabel').textContent = 'Time Out: --';  // Reset Time Out label
+    });
+
+    function logout() {
+      window.location.href = "http://localhost/myprojects/FiTrackElective/FitTrack/marfolder/LoginUser.php"; // Redirect to login page
+    }
+
+    function closeModal() {
+      document.getElementById('logoutModal').style.display = 'none'; // Close the logout confirmation modal
+    }
   </script>
+
 </body>
 </html>

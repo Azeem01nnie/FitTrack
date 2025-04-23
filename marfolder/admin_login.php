@@ -22,7 +22,7 @@ if (isset($_POST['admin_login'])) {
         if ($password === $admin['password_hash']) {
             $_SESSION['admin_id'] = $admin['admin_id'];
             $_SESSION['admin_name'] = $admin['full_name'];
-            header("Location: ../AdminDashboard/administrator/admin_dash.html");
+            header("Location: ../AdminDashboard/administrator/admin_dash.php");
             exit();
         } else {
             header("Location: logIn.php?error=Incorrect+password");

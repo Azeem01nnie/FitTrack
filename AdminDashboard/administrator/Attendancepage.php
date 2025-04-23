@@ -1,8 +1,6 @@
 <?php
 session_start();
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    exit;
 }
 
 $conn = new mysqli("localhost", "root", "", "fittrack_db");
@@ -62,9 +60,25 @@ $result = $stmt->get_result();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FitTrack - Attendance Log</title>
   <link rel="stylesheet" href="style.css">
+  <script src="modalss.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="icon" type="image/png" href="/AdminDashboard/icons/FittrackFavIcon.png">
 </head>
+<style>
+  .topbtn{
+    padding: 10px;
+    border: none;
+    background-color: #ddd;
+    font-size: 12px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 7px;
+  }
+  .topbtn:hover {
+    background-color: #ddd;
+    border: #4A90E2 2px solid;
+  }
+</style>
 <body>
 
 <nav>
@@ -77,10 +91,10 @@ $result = $stmt->get_result();
 
 <aside class="side-nav" id="sidebar">
   <ul>
-    <li><a href="Hdashboard.html">Home Dashboard</a></li>
-    <li><a href="Approvalpage.php">Approval Log</a></li>
+    <li><a href="admin_dash.php">Home dashboard</a></li>
+    <li><a href="Approvalpage.php">Approval log</a></li>
     <li><a href="Attendancepage.php" class="active">Attendance Log</a></li>
-    <li><a href="managepage.php">Manage Account</a></li>
+    <li><a href="managepage.php">Manage account</a></li>
   </ul>
   <ul>
     <li><a class="btn-logout" onclick="openModal()">Logout</a></li>
@@ -94,9 +108,9 @@ $result = $stmt->get_result();
     <label>From: <input type="date" name="from_date" value="<?= htmlspecialchars($from_date) ?>"></label>
     <label>To: <input type="date" name="to_date" value="<?= htmlspecialchars($to_date) ?>"></label>
     <label>Username: <input type="text" name="search_user" value="<?= htmlspecialchars($search_user) ?>" placeholder="Search username or name"></label>
-    <button type="submit">Filter</button>
-    <button type="button" onclick="exportToExcel('attendanceTable')">Export to Excel</button>
-    <button type="button" onclick="window.print()">Print</button>
+    <button type="submit" class="topbtn">Filter</button>
+    <button type="button" onclick="exportToExcel('attendanceTable')" class="topbtn">Export to Excel</button>
+    <button type="button" onclick="window.print()" class="topbtn">Print</button>
   </form>
 
   <div class="approval-container">

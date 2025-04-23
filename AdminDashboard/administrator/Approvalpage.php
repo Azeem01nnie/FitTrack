@@ -34,7 +34,7 @@ $result = $conn->query($sql);
     </nav>
     <aside class="side-nav" id="sidebar">
         <ul>
-            <li><a href="Hdashboard.html">Home dashboard</a></li>
+            <li><a href="admin_dash.php">Home dashboard</a></li>
             <li><a href="Approvalpage.php" class="active">Approval log</a></li>
             <li><a href="Attendancepage.php">Attendance log</a></li>
             <li><a href="managepage.php">Manage account</a></li>
