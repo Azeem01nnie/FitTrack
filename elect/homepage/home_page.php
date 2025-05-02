@@ -1,6 +1,15 @@
 <?php
 session_start();
 
+// Load language
+$preferredLanguage = isset($_COOKIE['preferredLanguage']) ? $_COOKIE['preferredLanguage'] : 'en';
+$languageFile = "../../languages/lang_$preferredLanguage.php";
+if (file_exists($languageFile)) {
+    $lang = include $languageFile;
+} else {
+    $lang = include "../../languages/lang_en.php"; // fallback
+}
+
 // Check if the user is logged in
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.html");  // Redirect to login if not logged in
@@ -45,6 +54,56 @@ $conn->close();
       pointer-events: auto;
       opacity: 1;
     }
+
+    @media (max-width: 415px) {
+  body {
+    grid-template-columns: 1fr;
+  }
+
+  aside {
+    position: fixed;
+    width: 200px;
+    display: none;
+    background-color: white;
+    top: 55px;
+  }
+
+  .show {
+    display: block;
+  }
+
+  .hamburger {
+    display: inline-block;
+  }
+
+  .topbar label {
+    display: none;
+  }
+
+  .live-clock {
+    font-size: 10px;
+  }
+
+  .circle-box {
+    width: 60px;
+    height: 60px;
+  }
+
+  #mainContent {
+    padding: 20px;
+    margin-left: 60px;
+    margin-bottom: 1px;
+    width: 300px;
+  }
+
+  aside.side-nav {
+    grid-area: sidebar;
+    position: fixed;
+    top: 63.5px;
+    left: 0;
+    height: calc(100vh - 50px);
+  }
+}
   </style>
 </head>
 <body>
@@ -58,19 +117,19 @@ $conn->close();
 
   <aside class="side-nav" id="sidebar" class="sidebar-enabled">
     <ul>
-      <li><a href="../account/profiler.php">Profile Account </a></li>
-      <li><a href="../myAttendance/attendance.html">My Attendance</a></li>
-      <li><a href="../membershipStatus/membershipStatus.html">Membership Status</a></li>
-      <li><a href="../setting/setting.php">Setting</a></li>
+      <li><a href="../account/profiler.php"><?php echo $lang['Profile_Account']; ?></a></li>
+      <li><a href="../myAttendance/attendance.php"><?php echo $lang['My_Attendance']; ?></a></li>
+      <li><a href="../membershipStatus/membershipStatus.php"><?php echo $lang['Membership_Status']; ?></a></li>
+      <li><a href="../setting/setting.php"><?php echo $lang['Settings']; ?></a></li>
     </ul>
     <ul>
-      <li><a class="btn-logout" onclick="openModal()">Logout</a></li>
+      <li><a class="btn-logout" onclick="openModal()"><?php echo $lang['Logout']; ?></a></li>
     </ul>
   </aside>
   
   <div id="mainContent">
     <div id="liveClockContainer" class="live-clock-container">
-      <div id="liveClock" class="live-clock">Loading current time...</div>
+      <div id="liveClock" class="live-clock"><?php echo $lang['Loading_Current_Time']; ?></div>
       <span id="refreshIcon" class="refresh-icon" title="Refresh session" style="scale: 2;">
         🔄
       </span>
@@ -79,10 +138,10 @@ $conn->close();
       <i class="fa-solid fa-power-off fa-beat" style="color: #ffffff; scale: 1.4;" onclick="timeIn()"></i>
     </div>
     <div class="time-labels">
-      <div id="timeInLabel" class="label">Time In: --</div>
+      <div id="timeInLabel" class="label"><?php echo $lang['Time_In']; ?></div>
     </div>
     <div class="time-labels">
-      <div id="timeOutLabel" class="label">Time Out: --</div>
+      <div id="timeOutLabel" class="label"><?php echo $lang['Time_Out']; ?></div>
     </div>
   </div>
 
@@ -142,6 +201,14 @@ $conn->close();
     function closeModal() {
       document.getElementById('logoutModal').style.display = 'none'; // Close the logout confirmation modal
     }
+  </script>
+
+  <script>
+    const sidebar = document.getElementById('sidebar')
+
+    function toggleSidebar(){
+    sidebar.classList.toggle('show')
+}
   </script>
 
 </body>

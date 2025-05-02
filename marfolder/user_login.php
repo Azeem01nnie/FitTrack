@@ -17,8 +17,14 @@ if (isset($_POST['user_login'])) {
 
     if ($result->num_rows === 1) {
         $user = $result->fetch_assoc();
+
+        if (isset($user['status']) && $user['status'] === 'inactive') {
+            header("Location: LoginUser.php?error=Your+account+has+been+deactivated+by+admin");
+            exit();
+        }
+
         if ($user['approval_status'] !== 'approved') {
-            header("Location: logIn.php?error=Your+account+is+not+yet+approved");
+            header("Location: LoginUser.php?error=Your+account+is+not+yet+approved");
             exit();
         }
         if ($password === $user['password_hash']) {

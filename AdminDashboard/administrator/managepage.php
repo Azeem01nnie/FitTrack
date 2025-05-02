@@ -52,7 +52,7 @@ $result = $conn->query($sql);
                     <th>Username</th>
                     <th>Name</th>
                     <th>Membership Type</th>
-                    <th>Membership Deadline</th>
+                    <th>Membership Expires</th>
                     <th>Status</th>
                     <th>Update</th>
                     <th>Action</th>

@@ -2,6 +2,15 @@
 session_start();
 include '../../AdminDashboard/administrator/db_connection.php'; // Corrected path
 
+// Load language
+$preferredLanguage = isset($_COOKIE['preferredLanguage']) ? $_COOKIE['preferredLanguage'] : 'en';
+$languageFile = "../../languages/lang_$preferredLanguage.php";
+if (file_exists($languageFile)) {
+    $lang = include $languageFile;
+} else {
+    $lang = include "../../languages/lang_en.php"; // fallback
+}
+
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../login/login.php");
@@ -206,22 +215,22 @@ if ($result && $result->num_rows > 0) {
   <div class="container" id="mainContent">
 
     <div class="form-row">
-      <div class="header-label"><label>FULL NAME</label></div>
+      <div class="header-label"><label><?php echo $lang['full_name']; ?></label></div>
       <div class="info-group"><p><?php echo $full_name; ?></p></div>
     </div>
 
     <div class="form-row">
-      <div class="header-label"><label>ADDRESS</label></div>
+      <div class="header-label"><label><?php echo $lang['address']; ?></label></div>
       <div class="info-group"><p><?php echo $address; ?></p></div>
     </div>
 
     <div class="form-row">
-      <div class="header-label"><label>EMAIL</label></div>
+      <div class="header-label"><label><?php echo $lang['email']; ?></label></div>
       <div class="info-group"><p><?php echo $email; ?></p></div>
     </div>
 
     <div class="form-row">
-      <div class="header-label"><label>PHONE NUMBER</label></div>
+      <div class="header-label"><label><?php echo $lang['contact_no']; ?></label></div>
       <div class="info-group"><p><?php echo $phone; ?></p></div>
     </div>
   </div>
