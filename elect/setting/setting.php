@@ -90,6 +90,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <title><?= isset($language['account_settings']) ? $language['account_settings'] : 'Account Settings'; ?> - FitTrack</title>
   <link rel="stylesheet" href="setting.css">
 </head>
+<style>
+  @media(max-width: 415px){
+    .cancel-btn {
+      margin-right: 100px;
+    }
+  }
+</style>
 <body>
   <div class="header">
     <div style="display: flex; align-items: center;">

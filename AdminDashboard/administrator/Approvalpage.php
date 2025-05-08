@@ -95,15 +95,6 @@ $result = $conn->query($sql);
     </aside>
     <main class="main-content">
         <h3>Account Approval Log</h3>
-        <div class="sort-section">
-            <label>Sort by:</label>
-            <select id="sort-options" class="sort-btn">
-                <option value="a-z">A - Z</option>
-                <option value="z-a">Z - A</option>
-                <option value="recent">Most Recent</option>
-                <option value="oldest">Oldest</option>
-            </select>
-        </div>
         <div class="approval-container">
             <table>
                 <thead>
@@ -188,6 +179,20 @@ document.addEventListener("DOMContentLoaded", function () {
         rowsArray.forEach(row => tableBody.appendChild(row));
     });
 });
+</script>
+<script>
+  function refreshTable() {
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", "fetch_pending_users.php", true);
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        document.querySelector("tbody").innerHTML = xhr.responseText;
+      }
+    };
+    xhr.send();
+  }
+
+  setInterval(refreshTable, 2000); // Refresh every 2 seconds
 </script>
 
 </body>

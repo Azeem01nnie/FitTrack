@@ -115,5 +115,10 @@ $conn->close();
       </table>
     </div>
 </div>
+<script>
+  setInterval(function() {
+    location.reload();
+  }, 2000);
+</script>
 </body>
 </html>

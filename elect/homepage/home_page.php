@@ -7,19 +7,17 @@ $languageFile = "../../languages/lang_$preferredLanguage.php";
 if (file_exists($languageFile)) {
     $lang = include $languageFile;
 } else {
-    $lang = include "../../languages/lang_en.php"; // fallback
+    $lang = include "../../languages/lang_en.php";
 }
 
-// Check if the user is logged in
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.html");  // Redirect to login if not logged in
+    header("Location: login.html");
     exit();
 }
 
 $user_id = $_SESSION['user_id'];
 $username = $_SESSION['user_name'];
 
-// Connect to the database to fetch user details
 $conn = new mysqli("localhost", "root", "", "fittrack_db");
 
 if ($conn->connect_error) {
@@ -74,6 +72,10 @@ $conn->close();
 
   .hamburger {
     display: inline-block;
+  }
+
+  .topbar {
+    margin-left: 10px;
   }
 
   .topbar label {
@@ -167,39 +169,34 @@ $conn->close();
     const isTimeIn = <?php echo json_encode(isset($_SESSION['time_in']) && $_SESSION['time_in'] === true); ?>;
     
     if (isTimeIn) {
-      // If time in, disable sidebar
+     
       document.getElementById('sidebar').classList.add('sidebar-disabled');
       document.getElementById('timeInLabel').textContent = 'Time In: ' + new Date().toLocaleTimeString();
     }
 
     function timeIn() {
-      // Set session to indicate Time In
+  
       <?php $_SESSION['time_in'] = true; ?>
 
-      // Disable sidebar interaction when Time In is clicked
       document.getElementById('sidebar').classList.add('sidebar-disabled');
       
-      // Set the Time In label
       document.getElementById('timeInLabel').textContent = 'Time In: ' + new Date().toLocaleTimeString();
     }
 
-    // Refresh session when refresh icon is clicked (re-enable sidebar)
     document.getElementById("refreshIcon").addEventListener("click", () => {
-      // Enable sidebar interaction
       document.getElementById('sidebar').classList.remove('sidebar-disabled');
       
-      // Reset the session for the next cycle
       <?php $_SESSION['time_in'] = false; ?>
-      document.getElementById('timeInLabel').textContent = 'Time In: --';  // Reset Time In label
-      document.getElementById('timeOutLabel').textContent = 'Time Out: --';  // Reset Time Out label
+      document.getElementById('timeInLabel').textContent = 'Time In: --';
+      document.getElementById('timeOutLabel').textContent = 'Time Out: --';
     });
 
     function logout() {
-      window.location.href = "http://localhost/myprojects/FiTrackElective/FitTrack/marfolder/LoginUser.php"; // Redirect to login page
+      window.location.href = "http://localhost/myprojects/FiTrackElective/FitTrack/marfolder/LoginUser.php";
     }
 
     function closeModal() {
-      document.getElementById('logoutModal').style.display = 'none'; // Close the logout confirmation modal
+      document.getElementById('logoutModal').style.display = 'none';
     }
   </script>
 
@@ -208,7 +205,7 @@ $conn->close();
 
     function toggleSidebar(){
     sidebar.classList.toggle('show')
-}
+  }
   </script>
 
 </body>

@@ -245,6 +245,19 @@ $result = $stmt->get_result();
     document.body.removeChild(downloadLink);
   }
 </script>
+<script>
+  function fetchAttendanceTable() {
+    fetch('fetch_attendance.php')
+      .then(response => response.text())
+      .then(data => {
+        document.querySelector('#attendanceTable tbody').innerHTML = data;
+      })
+      .catch(error => console.error('Error fetching attendance:', error));
+  }
+
+  setInterval(fetchAttendanceTable, 2000); // Fetch every 2 seconds
+</script>
+
 
 </body>
 </html>

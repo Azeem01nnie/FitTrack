@@ -105,6 +105,9 @@ $conn->close();
                 document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
             }, 100);
         }
+        setInterval(function() {
+    location.reload();
+  }, 2000);
     </script>
 </body>
 </html>

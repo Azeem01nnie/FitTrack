@@ -201,31 +201,31 @@ td {
     <div class="dashboardbox">
       <div class="Box-divider">
         <div class="box">
-          <h1><?= $totalUsers ?></h1>
+          <h1 id="totalUsers"><?= $totalUsers ?></h1>
           <p>Total Accounts</p>
         </div>
         <div class="box">
-          <h1><?= $disabledUsers ?></h1>
+          <h1 id="disabledUsers"><?= $disabledUsers ?></h1>
           <p>Disabled Accounts</p>
         </div>
       </div>
       <div class="Box-divider">
         <div class="box">
-          <h1><?= $pendingUsers ?></h1>
+          <h1 id="pendingUsers"><?= $pendingUsers ?></h1>
           <p>Pending Accounts</p>
         </div>
         <div class="box">
-          <h1><?= $activeUsers ?></h1>
+          <h1 id="activeUsers"><?= $activeUsers ?></h1>
           <p>Active Accounts</p>
         </div>
       </div>
       <div class="Box-divider">
         <div class="box">
-          <h1><?= $monthlyUsers ?></h1>
+          <h1 id="monthlyUsers"><?= $monthlyUsers ?></h1>
           <p>Monthly Users</p>
         </div>
         <div class="box">
-          <h1><?= $annualUsers ?></h1>
+          <h1 id="annualUsers"><?= $annualUsers ?></h1>
           <p>Annually Users</p>
         </div>
       </div>
@@ -244,6 +244,47 @@ td {
       </div>
     </div>
   </div>
+  <script>
+function updateLogsAndBoxes() {
+  // Fetch recent attendance logs
+  fetch('fetch_logs.php')
+    .then(res => res.json())
+    .then(data => {
+      const tbody = document.getElementById('logs-table-body');
+      tbody.innerHTML = '';
+
+      if (data.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="3">No recent attendance logs.</td></tr>';
+      } else {
+        data.forEach(log => {
+          tbody.innerHTML += `
+            <tr>
+              <td>${log.full_name}</td>
+              <td>${log.time_in}</td>
+              <td>${log.time_out}</td>
+            </tr>
+          `;
+        });
+      }
+    });
+
+  // Fetch dashboard box stats
+  fetch('fetch_dashboard.php')
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById('totalUsers').textContent = data.totalUsers;
+      document.getElementById('activeUsers').textContent = data.activeUsers;
+      document.getElementById('disabledUsers').textContent = data.disabledUsers;
+      document.getElementById('pendingUsers').textContent = data.pendingUsers;
+      document.getElementById('monthlyUsers').textContent = data.monthlyUsers;
+      document.getElementById('annualUsers').textContent = data.annualUsers;
+    });
+}
+
+// Run every 2 seconds
+setInterval(updateLogsAndBoxes, 2000);
+</script>
+
 </body>
 </html>
 
