@@ -12,10 +12,10 @@ return [
     'cancel' => 'Kanselahin',
     'language' => 'Wika',
     'select_language' => 'Pumili ng Wika',
-    'language_english' => 'Ingles',
+    'language_english' => 'English',
     'language_filipino' => 'Filipino',
     'language_korean' => 'Korean',
-    'language_japanese' => 'Hapones',
+    'language_japanese' => 'Japanese',
     'language_khmer' => 'Khmer',
     'Logout' => 'Mag-logout',
     'My_Attendance' => 'Aking Pagdalo',
@@ -39,4 +39,5 @@ return [
     'Time_in' => 'Oras ng Pagpasok',
     'Time_out' => 'Oras ng Paglabas',
     'Duration' => 'Durasyon',
+    'Date' => 'Petsa',
 ];

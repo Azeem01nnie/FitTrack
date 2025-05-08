@@ -1,5 +1,6 @@
 <?php
 session_start();
+date_default_timezone_set('Asia/Manila');
 $conn = new mysqli("localhost", "root", "", "fittrack_db");
 
 if ($conn->connect_error) {
@@ -92,6 +93,55 @@ th {
 td {
   padding-top: 8px;
   padding-bottom: 8px;
+
+  @media(max-width: 412px){
+    body{
+        grid-template-columns: 1fr;
+    }
+    aside{
+        margin-top: 45.5px;
+        position: fixed;
+        width: 200px;
+        display: none;
+        background-color: white;
+    }
+    .show{
+        display: block;
+    }
+    .topbar{
+        flex: 1;
+        padding: 15px;
+        font-size: 16px;
+        margin-left: 20px;
+        justify-content: space-between;
+        align-items: center;
+        background: white;
+        border-radius: 10px;
+        color: black;
+    }
+
+    .side-nav{
+      position: fixed;
+      top: 55px;
+      left: 0;
+    }
+    .topbar input {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 150px;
+        margin-left: 10px;
+    }
+    .topbar label{
+        font-family: sans-serif;
+        display: none;
+    }
+    .hamburger{
+        font-size: 24px;
+        cursor: pointer;
+        display: inline-block;
+    }
+  }
 }
 </style>
 <body>

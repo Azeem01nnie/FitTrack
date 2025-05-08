@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>FitTrack</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="icon" type="image/png" href="../AdminDashboard/icons/FittrackFavIcon.png">
+    <link rel="icon" type="image/png" href="../FitTrack/AdminDashboard/icons/FittrackFavIcon.png">
     <script type="text/javascript" src="app.js" defer></script>
     <script src="modalss.js"></script>
 </head>
@@ -47,6 +47,54 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     gap: 20px;
     margin-left: 30px;
     margin-top: 20px;
+  }
+  @media(max-width: 412px){
+    body{
+        grid-template-columns: 1fr;
+    }
+    aside{
+        margin-top: 45.5px;
+        position: fixed;
+        width: 200px;
+        display: none;
+        background-color: white;
+    }
+    .show{
+        display: block;
+    }
+    .topbar{
+        flex: 1;
+        padding: 15px;
+        font-size: 16px;
+        margin-left: 20px;
+        justify-content: space-between;
+        align-items: center;
+        background: white;
+        border-radius: 10px;
+        color: black;
+    }
+
+    .side-nav{
+      position: fixed;
+      top: 55px;
+      left: 0;
+    }
+    .topbar input {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 150px;
+        margin-left: 10px;
+    }
+    .topbar label{
+        font-family: sans-serif;
+        display: none;
+    }
+    .hamburger{
+        font-size: 24px;
+        cursor: pointer;
+        display: inline-block;
+    }
   }
 </style>
 <body>
@@ -59,9 +107,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </nav>
     <aside class="side-nav" id="sidebar">
         <ul>
-            <li><a href="Hdashboard.html">Home dashboard</a></li>
-            <li><a href="Approvalpage.html">Approval log</a></li>
-            <li><a href="Attendancepage.html">Attendance log</a></li>
+            <li><a href="Hdashboard.php">Home dashboard</a></li>
+            <li><a href="Approvalpage.php">Approval log</a></li>
+            <li><a href="Attendancepage.php">Attendance log</a></li>
             <li><a href="managepage.php" class="active">Manage account</a></li>
         </ul>
         <ul>

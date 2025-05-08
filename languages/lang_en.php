@@ -3,7 +3,7 @@ return [
     'welcome' => 'Welcome',
     'account_settings' => 'Account Settings',
     'edit_profile' => 'Edit Profile',
-    'address' => 'ADDRESS',
+    'address' => 'Address',
     'full_name' => 'Full Name',
     'username' => 'Username',
     'email' => 'Email Address',
@@ -39,4 +39,5 @@ return [
     'Time_in' => 'Time In',
     'Time_out' => 'Time Out',
     'Duration' => 'Duration',
+    'Date' => 'Date',
 ];

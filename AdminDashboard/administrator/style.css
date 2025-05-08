@@ -472,7 +472,7 @@ main.container {
 /*MEDIA QUERIES*/
 /*MEDIA QUERIES*/
 
-@media(max-width: 400px){
+@media(max-width: 412px){
     body{
         grid-template-columns: 1fr;
     }

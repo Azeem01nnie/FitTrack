@@ -23,6 +23,56 @@ $result = $conn->query($sql);
     <script src="app.js"></script>
     <script src="modalss.js"></script>
 </head>
+<style>
+     @media(max-width: 412px){
+    body{
+        grid-template-columns: 1fr;
+    }
+    aside{
+        margin-top: 45.5px;
+        position: fixed;
+        width: 200px;
+        display: none;
+        background-color: white;
+    }
+    .show{
+        display: block;
+    }
+    .topbar{
+        flex: 1;
+        padding: 15px;
+        font-size: 16px;
+        margin-left: 20px;
+        justify-content: space-between;
+        align-items: center;
+        background: white;
+        border-radius: 10px;
+        color: black;
+    }
+
+    .side-nav{
+      position: fixed;
+      top: 55px;
+      left: 0;
+    }
+    .topbar input {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 150px;
+        margin-left: 10px;
+    }
+    .topbar label{
+        font-family: sans-serif;
+        display: none;
+    }
+    .hamburger{
+        font-size: 24px;
+        cursor: pointer;
+        display: inline-block;
+    }
+  }
+</style>
 <body>
 <nav>
     <div class="hamburger" onclick="toggleSidebar()">&#9776;</div>
@@ -45,6 +95,15 @@ $result = $conn->query($sql);
 
 <main class="main-content">
     <h3>Manage Account</h3>
+    <div class="sort-section">
+            <label>Sort by:</label>
+            <select id="sort-options" class="sort-btn">
+                <option value="a-z">A - Z</option>
+                <option value="z-a">Z - A</option>
+                <option value="activity">Annually-Monthly-Dailypay</option>
+                <option value="acitve">Active - Inactive</option>
+            </select>
+        </div>
     <div class="approval-container">
         <table>
             <thead>
@@ -151,6 +210,40 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 </script>
+<script>
+document.getElementById("sort-options").addEventListener("change", function () {
+    const option = this.value;
+    const table = document.querySelector("table tbody");
+    const rows = Array.from(table.querySelectorAll("tr"));
+
+    rows.sort((a, b) => {
+        const nameA = a.children[1].textContent.trim().toLowerCase(); // Full Name
+        const nameB = b.children[1].textContent.trim().toLowerCase();
+        const planA = a.children[2].textContent.trim().toLowerCase();
+        const planB = b.children[2].textContent.trim().toLowerCase();
+        const statusA = a.children[4].textContent.trim().toLowerCase();
+        const statusB = b.children[4].textContent.trim().toLowerCase();
+
+        if (option === "a-z") {
+            return nameA.localeCompare(nameB);
+        } else if (option === "z-a") {
+            return nameB.localeCompare(nameA);
+        } else if (option === "activity") {
+            const order = { annually: 1, monthly: 2, dailypay: 3 };
+            return (order[planA] || 4) - (order[planB] || 4);
+        } else if (option === "acitve") {
+            const order = { active: 1, inactive: 2 };
+            return (order[statusA] || 3) - (order[statusB] || 3);
+        }
+
+        return 0;
+    });
+
+    // Append sorted rows back to the table
+    rows.forEach(row => table.appendChild(row));
+});
+</script>
+
 </body>
 </html>
 

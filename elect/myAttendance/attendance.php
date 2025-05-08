@@ -86,10 +86,10 @@ $conn->close();
       <table class="attendance-table">
         <thead>
           <tr>
+            <th><?php echo $lang['Date']; ?></th>
             <th><?php echo $lang['Time_in']; ?></th>
             <th><?php echo $lang['Time_out']; ?></th>
             <th><?php echo $lang['Duration']; ?></th>
-            <th></th>
           </tr>
         </thead>
         <tbody>

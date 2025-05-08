@@ -1,6 +1,10 @@
 <?php
+
+date_default_timezone_set('Asia/Manila'); // Ensure Philippine time zone
+
 session_start();
 if (!isset($_SESSION['user_id'])) {
+    // Redirect to login if not authenticated
 }
 
 $conn = new mysqli("localhost", "root", "", "fittrack_db");
@@ -62,10 +66,10 @@ $result = $stmt->get_result();
   <link rel="stylesheet" href="style.css">
   <script src="modalss.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="icon" type="image/png" href="/AdminDashboard/icons/FittrackFavIcon.png">
+  <link rel="icon" type="image/png" href="../FitTrack/AdminDashboard/icons/FittrackFavIcon.png">
 </head>
 <style>
-  .topbtn{
+  .topbtn {
     padding: 10px;
     border: none;
     background-color: #ddd;
@@ -77,6 +81,55 @@ $result = $stmt->get_result();
   .topbtn:hover {
     background-color: #ddd;
     border: #4A90E2 2px solid;
+  }
+
+  @media(max-width: 412px){
+    body{
+        grid-template-columns: 1fr;
+    }
+    aside{
+        margin-top: 45.5px;
+        position: fixed;
+        width: 200px;
+        display: none;
+        background-color: white;
+    }
+    .show{
+        display: block;
+    }
+    .topbar{
+        flex: 1;
+        padding: 15px;
+        font-size: 16px;
+        margin-left: 20px;
+        justify-content: space-between;
+        align-items: center;
+        background: white;
+        border-radius: 10px;
+        color: black;
+    }
+
+    .side-nav{
+      position: fixed;
+      top: 55px;
+      left: 0;
+    }
+    .topbar input {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 150px;
+        margin-left: 10px;
+    }
+    .topbar label{
+        font-family: sans-serif;
+        display: none;
+    }
+    .hamburger{
+        font-size: 24px;
+        cursor: pointer;
+        display: inline-block;
+    }
   }
 </style>
 <body>
@@ -127,12 +180,17 @@ $result = $stmt->get_result();
       <tbody>
         <?php if ($result && $result->num_rows > 0): ?>
           <?php while($row = $result->fetch_assoc()): ?>
+            <?php 
+            // Format time_in and time_out to Philippine time
+            $timeIn = date('Y-m-d H:i:s', strtotime($row['time_in']));
+            $timeOut = date('Y-m-d H:i:s', strtotime($row['time_out']));
+            ?>
             <tr>
               <td><?= htmlspecialchars($row['username']) ?></td>
               <td><?= htmlspecialchars($row['full_name']) ?></td>
               <td><?= htmlspecialchars($row['plan']) ?></td>
-              <td><?= htmlspecialchars($row['time_in']) ?></td>
-              <td><?= htmlspecialchars($row['time_out']) ?></td>
+              <td><?= htmlspecialchars($timeIn) ?></td>
+              <td><?= htmlspecialchars($timeOut) ?></td>
             </tr>
           <?php endwhile; ?>
         <?php else: ?>
